@@ -11,25 +11,155 @@
             <div class="container-fluid">
                 <a href="{{ route('karyawan.create') }}" class="btn btn-primary my-2">Tambah Data</a>
 
-                <div class="card-body bg-white p-4 my-2 rounded">
-                    <div class="table-responsive">
-                        <table class="table table-md" id="myTable">
+                <div class="card-body bg-white my-2 rounded">
+                    <div class="">
+                        <table class="table table-md table-hover table-bordered" id="myTable">
                             <thead>
                             <tr>
-                                <th>#</th>
+                                <th>No</th>
                                 <th>Name</th>
-                                <th>Created At</th>
-                                <th>Status</th>
-                                <th>Action</th>
+                                <th>Alamat</th>
+                                <th>No HP</th>
+                                <th>email</th>
+                                <th>Department</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Irwansyah Saputra</td>
-                                <td>2017-01-09</td>
-                                <td><div class="badge badge-success">Active</div></td>
-                                <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Bandung</td>
+                                <td>08123456789</td>
+                                <td>johndoe@example.net</td>
+                                <td>IT</td>
                             </tr>
                             </tbody>
                         </table>
