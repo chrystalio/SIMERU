@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Karyawan extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'karyawan';
 
     protected $fillable = [
@@ -18,4 +18,9 @@ class Karyawan extends Model
         'email',
         'department_id',
     ];
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
 }
