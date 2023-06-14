@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
