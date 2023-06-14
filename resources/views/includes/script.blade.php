@@ -14,6 +14,7 @@
 <!-- Page Specific JS File -->
 <script>
     let karyawanTable = new DataTable('#myTable')
+    let departmentTable = new DataTable('#departmentTable')
 </script>
 
 <!-- Template JS File -->
