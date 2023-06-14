@@ -103,17 +103,16 @@
                                 </div>
                             </div>
                         </form>
-                        <p class="text-center">Not a member? <a data-toggle="tab" href="#signup">Sign Up</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+<script src="{{ asset('assets/modules/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/modules/popper.js') }}"></script>
+<script src="{{ asset('assets/modules/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="https://preview.colorlib.com/theme/bootstrap/login-form-14/js/main.js"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7d7136125efe3597","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.4.0","si":100}' crossorigin="anonymous"></script>
 </body>
 </html>
