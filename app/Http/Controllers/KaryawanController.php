@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreKaryawanRequest;
+use App\Models\Department;
 use App\Models\Karyawan;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -30,8 +31,10 @@ class KaryawanController extends Controller
 
     public function edit(Karyawan $karyawan): View
     {
-        return view('karyawan.edit', compact('karyawan'));
+        $departmentData = Department::all();
+        return view('karyawan.edit', compact('karyawan', 'departmentData'));
     }
+
 
     public function update(StoreKaryawanRequest $request, Karyawan $karyawan): RedirectResponse
     {
