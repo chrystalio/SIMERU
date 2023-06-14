@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,15 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
     Route::get('/update/karyawan/{karyawan}', [KaryawanController::class, 'edit'])->name('karyawan.edit');
     Route::put('/update/karyawan/{karyawan}', [KaryawanController::class, 'update'])->name('karyawan.update');
     Route::delete('/karyawan/{karyawan}', [KaryawanController::class, 'delete'])->name('karyawan.delete');
+
+    Route::get('/department', [DepartmentController::class, 'index'])->name('department.index');
+    Route::get('/department/create', [DepartmentController::class, 'create'])->name('department.create');
+    Route::post('/department/create', [DepartmentController::class, 'store'])->name('department.store');
+    Route::get('/department/edit', [DepartmentController::class, 'edit'])->name('department.edit');
+    Route::get('/update/department/{department}', [DepartmentController::class, 'edit'])->name('department.edit');
+    Route::put('/update/department/{department}', [DepartmentController::class, 'update'])->name('department.update');
+    Route::delete('/department/{department}', [DepartmentController::class, 'delete'])->name('department.delete');
+
 });
 
 require __DIR__.'/auth.php';
