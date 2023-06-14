@@ -19,33 +19,33 @@ class DepartmentController extends Controller
 
     public function create(): View
     {
-        return view('departments.create');
+        return view('department.create');
     }
 
     public function store(StoreDepartmentRequest $request): RedirectResponse
     {
         Department::create($request->validated());
 
-        return redirect()->route('departments.index')->with('success', 'Department created successfully.');
+        return redirect()->route('department.index')->with('success', 'Department created successfully.');
     }
 
     public function edit(Department $department): View
     {
-        return view('departments.edit', compact('department'));
+        return view('department.edit', compact('department'));
     }
 
     public function update(UpdateDepartmentRequest $request, Department $department): RedirectResponse
     {
         $department->update($request->validated());
 
-        return redirect()->route('departments.index')->with('success', 'Department updated successfully.');
+        return redirect()->route('department.index')->with('success', 'Department updated successfully.');
     }
 
     public function destroy(Department $department): RedirectResponse
     {
         $department->delete();
 
-        return redirect()->route('departments.index')->with('success', 'Department deleted successfully.');
+        return redirect()->route('department.index')->with('success', 'Department deleted successfully.');
     }
 }
 
