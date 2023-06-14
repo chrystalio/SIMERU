@@ -36,15 +36,17 @@
                             <input type="tel" class="form-control" id="no_telp" name="no_telp" placeholder="0877xxxxxx">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="departemen">Departemen</label>
-                            <select name="departemen" id="departemen" class="form-control">
-                                <option value="1">IT</option>
-                                <option value="2">HRD</option>
-                                <option value="3">Keuangan</option>
-                                <option value="4">Marketing</option>
-                                <option value="5">Operasional</option>
+                            <label for="department_id">Departemen</label>
+                            <select name="department_id" id="department_id" class="form-control">
+                                <option value="">Pilih Departemen</option>
+                                @foreach($departmentData as $department)
+                                    <option value="{{ $department->id }}" {{ old('department_id') == $department->id ? 'selected' : '' }}>
+                                        {{ $department->nama }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
+
                     </div>
                     <button type="submit" class="btn btn-primary m-100">Tambah Data</button>
                 </form>
