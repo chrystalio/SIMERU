@@ -9,9 +9,8 @@
         </div>
         <div class="section-body">
             <div class="container-fluid">
-                <a href="{{ route('karyawan.create') }}" class="btn btn-primary my-2">Tambah Data</a>
-
                 <div class="card-body bg-white my-2 rounded">
+                <a href="{{ route('karyawan.create') }}" class="btn btn-primary my-3">Tambah Data</a>
                     <div class="">
                         <table class="table table-md table-hover table-bordered" id="myTable">
                             <thead>
