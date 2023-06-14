@@ -5,15 +5,15 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreKaryawanRequest;
 use App\Models\Karyawan;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 use Illuminate\View\View;
 
 class KaryawanController extends Controller
 {
     public function index(): View
     {
-        return view('karyawan.index');
+        $karyawanData = Karyawan::all();
+
+        return view('karyawan.index', compact('karyawanData'));
     }
 
     public function create(): view
