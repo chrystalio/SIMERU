@@ -79,13 +79,14 @@
                             </div>
                         </div>
                         <form action="{{ route('login') }}" method="POST" class="signin-form">
+                            @csrf
                             <div class="form-group mb-3">
                                 <label class="label" id="username" for="username">Username</label>
-                                <input type="text" id="username" class="form-control" placeholder="Username" required>
+                                <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" id="password" for="password">Password</label>
-                                <input type="password" id="password" class="form-control" placeholder="Password" required>
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
