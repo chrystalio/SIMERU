@@ -13,13 +13,13 @@ class KaryawanController extends Controller
     public function index(): View
     {
         $karyawanData = Karyawan::all();
-
         return view('karyawan.index', compact('karyawanData'));
     }
 
     public function create(): view
     {
-        return view('karyawan.create');
+        $departmentData = Department::all();
+        return view('karyawan.create', compact('departmentData'));
     }
 
     public function store(StoreKaryawanRequest $request): RedirectResponse
