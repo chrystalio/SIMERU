@@ -54,9 +54,3 @@
         </div>
     </section>
 @endsection
-
-@push('scripts')
-    <script>
-        let karyawanTable = new DataTable('#myTable')
-    </script>
-@endpush
