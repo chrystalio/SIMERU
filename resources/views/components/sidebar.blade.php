@@ -8,7 +8,7 @@
         </div>
         <ul class="sidebar-menu">
             <li class=active><a class="nav-link" href="{{ url('/dashboard') }}"><i class="fa-solid fa-layer-group"></i> <span>Dashboard</span></a></li>
-            <li class=""><a class="nav-link" href="{{ url('/karyawan') }}"><i class="fa-solid fa-users"></i> <span>Karyawan</span></a></li>
+            <li class=""><a class="nav-link" href="{{ url('/dashboard/karyawan') }}"><i class="fa-solid fa-users"></i> <span>Karyawan</span></a></li>
         </ul>
     </aside>
 </div>
