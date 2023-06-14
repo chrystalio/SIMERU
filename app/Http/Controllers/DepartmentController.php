@@ -34,7 +34,7 @@ class DepartmentController extends Controller
         return view('department.edit', compact('department'));
     }
 
-    public function update(UpdateDepartmentRequest $request, Department $department): RedirectResponse
+    public function update(StoreDepartmentRequest $request, Department $department): RedirectResponse
     {
         $department->update($request->validated());
 
