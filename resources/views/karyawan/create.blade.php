@@ -8,74 +8,46 @@
             <h1>Tambah Karyawan</h1>
         </div>
         <div class="section-body">
-            <div class="container-fluid">
-                <div class="card-body bg-white my-2 rounded">
-                    <form action="">
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="name">Nama</label>
-                                <input type="text" id="name" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Phone Number (US Format)</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <i class="fas fa-phone"></i>
-                                        </div>
-                                    </div>
-                                    <input type="text" class="form-control phone-number">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Password Strength</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <i class="fas fa-lock"></i>
-                                        </div>
-                                    </div>
-                                    <input type="password" class="form-control pwstrength" data-indicator="pwindicator">
-                                </div>
-                                <div id="pwindicator" class="pwindicator">
-                                    <div class="bar"></div>
-                                    <div class="label"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Currency</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            $
-                                        </div>
-                                    </div>
-                                    <input type="text" class="form-control currency">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Purchase Code</label>
-                                <input type="text" class="form-control purchase-code" placeholder="ASDF-GHIJ-KLMN-OPQR">
-                            </div>
-                            <div class="form-group">
-                                <label>Invoice</label>
-                                <input type="text" class="form-control invoice-input">
-                            </div>
-                            <div class="form-group">
-                                <label>Date</label>
-                                <input type="text" class="form-control datemask" placeholder="YYYY/MM/DD">
-                            </div>
-                            <div class="form-group">
-                                <label>Credit Card</label>
-                                <input type="text" class="form-control creditcard">
-                            </div>
-                            <div class="form-group">
-                                <label>Tags</label>
-                                <input type="text" class="form-control inputtags">
-                            </div>
+            <div class="card-body bg-white my-2 rounded p-lg-5">
+                <form method="POST" action="{{ route('karyawan.store') }}">
+                    @csrf
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Nama">
+                            @error('nama')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
-                    </form>
-                </div>
+                        <div class="form-group col-md-6">
+                            <label for="alamat">Alamat</label>
+                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="email@example.net" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-danger">Input email dengan benar.
+                        </small>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="no_telp">No HP</label>
+                            <input type="tel" class="form-control" id="no_telp" name="no_telp" placeholder="0877xxxxxx">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="departemen">Departemen</label>
+                            <select name="departemen" id="departemen" class="form-control">
+                                <option value="1">IT</option>
+                                <option value="2">HRD</option>
+                                <option value="3">Keuangan</option>
+                                <option value="4">Marketing</option>
+                                <option value="5">Operasional</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary m-100">Tambah Data</button>
+                </form>
             </div>
         </div>
     </section>
