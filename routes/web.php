@@ -44,7 +44,7 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
     Route::get('/department/edit', [DepartmentController::class, 'edit'])->name('department.edit');
     Route::get('/update/department/{department}', [DepartmentController::class, 'edit'])->name('department.edit');
     Route::put('/update/department/{department}', [DepartmentController::class, 'update'])->name('department.update');
-    Route::delete('/department/{department}', [DepartmentController::class, 'delete'])->name('department.delete');
+    Route::delete('/department/{department}', [DepartmentController::class, 'destroy'])->name('department.delete');
 
 });
 
