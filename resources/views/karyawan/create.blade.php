@@ -74,7 +74,6 @@
                                 <input type="text" class="form-control inputtags">
                             </div>
                         </div>
-                </div>
                     </form>
                 </div>
             </div>
