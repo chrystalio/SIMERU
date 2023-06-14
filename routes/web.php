@@ -29,7 +29,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/karyawan', [KaryawanController::class, 'index'])->name('karyawan.index');
-    Route::post('/karyawan', [KaryawanController::class, 'store'])->name('karyawan.store');
+    Route::get('/karyawan/create', [KaryawanController::class, 'create'])->name('karyawan.create');
+    Route::post('/karyawan/create', [KaryawanController::class, 'store'])->name('karyawan.store');
+    Route::get('/karyawan/edit', [KaryawanController::class, 'edit'])->name('karyawan.edit');
+    Route::get('/update/karyawan/{karyawan}', [KaryawanController::class, 'edit'])->name('karyawan.edit');
+    Route::put('/update/karyawan/{karyawan}', [KaryawanController::class, 'update'])->name('karyawan.update');
+    Route::delete('/karyawan/{karyawan}', [KaryawanController::class, 'delete'])->name('karyawan.delete');
 });
 
 require __DIR__.'/auth.php';

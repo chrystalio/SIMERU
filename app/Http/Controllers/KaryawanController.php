@@ -6,6 +6,7 @@ use App\Http\Requests\StoreKaryawanRequest;
 use App\Models\Karyawan;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\View\View;
 
 class KaryawanController extends Controller
@@ -13,6 +14,11 @@ class KaryawanController extends Controller
     public function index(): View
     {
         return view('karyawan.index');
+    }
+
+    public function create(): view
+    {
+        return view('karyawan.create');
     }
 
     public function store(StoreKaryawanRequest $request): RedirectResponse
@@ -27,9 +33,9 @@ class KaryawanController extends Controller
         return view('karyawan.edit', compact('karyawan'));
     }
 
-    public function update(Request $request, Karyawan $karyawan): RedirectResponse
+    public function update(StoreKaryawanRequest $request, Karyawan $karyawan): RedirectResponse
     {
-        $karyawan->update($request->all());
+        $karyawan->update($request->validated());
 
         return redirect()->route('karyawan.index');
     }
