@@ -42,11 +42,6 @@
                                 </td>
                             </tr>
                         @endforeach
-                        @if($karyawanData->isEmpty())
-                            <tr>
-                                <td colspan="7" class="text-center">Data Kosong</td>
-                            </tr>
-                        @endif
                         </tbody>
                     </table>
                 </div>
