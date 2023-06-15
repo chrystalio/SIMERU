@@ -38,6 +38,7 @@ class UpdateKaryawanTest extends TestCase
 
         $response->assertRedirect(route('login'));
     }
+
     public function test_can_update_karyawan_if_user_authenticated(): void
     {
         $user = User::factory()->create();
@@ -53,6 +54,7 @@ class UpdateKaryawanTest extends TestCase
         $response = $this->put(route('karyawan.update', $karyawan->id), $request);
 
         $response->assertRedirect(route('karyawan.index'));
+        $response->assertSessionHas('success', 'Karyawan Updated Successfully!');
         $this->assertDatabaseMissing('karyawan', $karyawan->toArray());
         $this->assertDatabaseHas('karyawan', $request);
     }

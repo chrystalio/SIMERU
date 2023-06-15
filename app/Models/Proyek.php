@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Proyek extends Model
 {
@@ -25,7 +26,7 @@ class Proyek extends Model
         'karyawan_id'
     ];
 
-    public function karyawan(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function karyawan(): BelongsTo
     {
         return $this->belongsTo(Karyawan::class);
     }

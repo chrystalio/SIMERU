@@ -25,6 +25,7 @@ class DeleteKaryawanTest extends TestCase
         $response = $this->actingAs($user)->delete(route('karyawan.delete', $karyawan));
 
         $response->assertRedirect(route('karyawan.index'));
+        $response->assertSessionHas('success', 'Karyawan Deleted Successfully!');
         $this->assertDatabaseMissing('karyawan', $karyawan->toArray());
     }
 }

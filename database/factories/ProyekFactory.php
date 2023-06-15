@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Karyawan;
 use App\Models\Proyek;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -16,7 +17,7 @@ class ProyekFactory extends Factory
             'deskripsi' => $this->faker->text,
             'tanggal_mulai' => $this->faker->date(),
             'tanggal_selesai' => $this->faker->date(),
-            'karyawan_id' => $this->faker->numberBetween(1, 211)
+            'karyawan_id' => Karyawan::factory()
         ];
     }
 }
