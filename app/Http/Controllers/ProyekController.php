@@ -28,7 +28,7 @@ class ProyekController extends Controller
     {
         Proyek::create($request->validated());
 
-        return redirect()->route('proyek.index');
+        return redirect()->route('proyek.index')->with('success', 'Proyek Created Successfully');
     }
 
     public function edit(Proyek $proyek): View
@@ -41,13 +41,13 @@ class ProyekController extends Controller
     {
         $proyek->update($request->validated());
 
-        return redirect()->route('proyek.index');
+        return redirect()->route('proyek.index')->with('success', 'Proyek Updated Successfully');
     }
 
     public function delete(Proyek $proyek): RedirectResponse
     {
         $proyek->delete();
 
-        return redirect()->route('proyek.index');
+        return redirect()->route('proyek.index')->with('success', 'Proyek Deleted Successfully');
     }
 }
