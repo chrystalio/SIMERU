@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                     <h6 class="text-muted font-bold">
-                                        <a href="#" class="text-decoration-none">
+                                        <a href="{{ route('karyawan.index') }}" class="text-decoration-none">
                                             Karyawan
                                         </a>
                                     </h6>
@@ -47,8 +47,8 @@
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                     <h6 class="text-muted font-bold">
-                                        <a href="#" class="text-decoration-none">
-                                            Proyek
+                                        <a href="{{ route('proyek.index') }}" class="text-decoration-none">
+                                            Projects
                                         </a>
                                     </h6>
                                     <h6 class="font-extrabold mb-0">40</h6>
@@ -67,7 +67,11 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="font-bold">Reports</h6>
+                                    <h6 class="font-bold">
+                                        <a href="{{ route('laporan.index') }}" class="text-decoration-none">
+                                            Reports
+                                        </a>
+                                    </h6>
                                     <h6 class="font-extrabold mb-0">60</h6>
                                 </div>
                             </div>
