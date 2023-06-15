@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProyekController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,6 +47,12 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
     Route::put('/update/department/{department}', [DepartmentController::class, 'update'])->name('department.update');
     Route::delete('/department/{department}', [DepartmentController::class, 'destroy'])->name('department.delete');
 
+    Route::get('/proyek', [ProyekController::class, 'index'])->name('proyek.index');
+    Route::get('/proyek/create', [ProyekController::class, 'create'])->name('proyek.create');
+    Route::post('/proyek', [ProyekController::class, 'store'])->name('proyek.store');
+    Route::get('/proyek/{proyek}/edit', [ProyekController::class, 'edit'])->name('proyek.edit');
+    Route::put('/proyek/{proyek}', [ProyekController::class, 'update'])->name('proyek.update');
+    Route::delete('/proyek/{proyek}', [ProyekController::class, 'delete'])->name('proyek.delete');
 });
 
 require __DIR__.'/auth.php';
