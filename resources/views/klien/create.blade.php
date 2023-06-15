@@ -36,9 +36,9 @@
                             <input type="tel" class="form-control" id="no_telp" name="no_telp" placeholder="0877xxxxxx">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="proyek_id">proyek</label>
+                            <label for="proyek_id">Project</label>
                             <select name="proyek_id" id="proyek_id" class="form-control">
-                                <option value="">Pilih Proyek</option>
+                                <option value="">Pilih Project</option>
                                 @foreach($proyekData as $proyek)
                                     <option value="{{ $proyek->id }}" @selected(old('proyek_id') == $proyek->id)>
                                         {{ $proyek->nama }}
