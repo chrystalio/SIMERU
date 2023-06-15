@@ -15,6 +15,7 @@
 <script>
     let karyawanTable = new DataTable('#karyawanTable')
     let departmentTable = new DataTable('#departmentTable')
+    let projectTable = new DataTable('#projectTable')
     let laporanTable = new DataTable('#laporanTable')
 </script>
 
