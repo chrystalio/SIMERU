@@ -8,8 +8,6 @@
             <h1>Dashboard</h1>
         </div>
         <div class="section-body">
-{{--            <h2 class="section-title">This is Example Page</h2>--}}
-{{--            <p class="section-lead">This page is just an example for you to create your own page.</p>--}}
             <div class="card">
                 <div class="card-body ">
                     <h5>Selamat Datang Di Sistem Informasi Management Perusahaan</h5>
@@ -95,6 +93,14 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-8 col-sm-12 my-4">
+                    <div id="container" style="width:100%; height:400px;"></div>
+                </div>
+                <div class="col-md-4 my-4">
+                    <div id="container1" style="width:100%; height:400px;"></div>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
