@@ -5,7 +5,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Tambah Klien</h1>
+            <h1>Tambah Client</h1>
         </div>
         <div class="section-body">
             <div class="card-body bg-white my-2 rounded p-lg-5">
@@ -46,8 +46,8 @@
                                 @endforeach
                             </select>
                         </div>
-
                     </div>
+                    <a href="{{ route('klien.index') }}" class="btn btn-secondary mr-lg-2">Kembali</a>
                     <button type="submit" class="btn btn-primary m-100">Tambah Data</button>
                 </form>
             </div>

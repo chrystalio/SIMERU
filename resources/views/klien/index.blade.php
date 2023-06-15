@@ -5,7 +5,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Klien</h1>
+            <h1>Client</h1>
         </div>
         <div class="section-body">
             <div class="card-body bg-white my-2 rounded">
