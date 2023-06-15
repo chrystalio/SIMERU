@@ -14,7 +14,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Nama">
+                            <input type="text" class="form-control" id="name" name="nama" placeholder="Nama">
                             @error('nama')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
