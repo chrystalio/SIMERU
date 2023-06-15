@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\KlienController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProyekController;
@@ -58,6 +59,12 @@ Route::middleware('auth')->group(function () {
         Route::put('/laporan/{laporan}', [LaporanController::class, 'update'])->name('laporan.update');
         Route::delete('/laporan/delete/{laporan}', [LaporanController::class, 'delete'])->name('laporan.delete');
 
+        Route::get('/klien', [KlienController::class, 'index'])->name('klien.index');
+        Route::get('/klien/create', [KlienController::class, 'create'])->name('klien.create');
+        Route::post('/klien', [KlienController::class, 'store'])->name('klien.store');
+        Route::get('/klien/{klien}/edit', [KlienController::class, 'edit'])->name('klien.edit');
+        Route::put('/klien/{klien}', [KlienController::class, 'update'])->name('klien.update');
+        Route::delete('/klien/{klien}', [KlienController::class, 'delete'])->name('klien.delete');
     });
 });
 
