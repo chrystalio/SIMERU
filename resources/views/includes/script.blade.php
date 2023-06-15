@@ -11,6 +11,7 @@
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Page Specific JS File -->
 <script>
@@ -18,6 +19,7 @@
     let departmentTable = new DataTable('#departmentTable')
     let projectTable = new DataTable('#projectTable')
     let laporanTable = new DataTable('#laporanTable')
+    let klienTable = new DataTable('#klienTable')
 
     document.addEventListener('DOMContentLoaded', function() {
         const chart = Highcharts.chart('container', {
@@ -139,3 +141,29 @@
 <!-- Template JS File -->
 <script src="{{ asset('assets/js/scripts.js') }}"></script>
 <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+<script>
+    var toastMixin = Swal.mixin({
+        toast: true,
+        icon: 'success',
+        title: 'General Title',
+        animation: false,
+        position: 'top-right',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    });
+</script>
+
+@if(session('success'))
+    <script>
+        toastMixin.fire({
+            animation: true,
+            title: '{{ session('success') }}'
+        });
+    </script>
+@endif

@@ -11,7 +11,7 @@
             <div class="card-body bg-white my-2 rounded">
                 <a href="{{ route('klien.create') }}" class="btn btn-primary my-3">Tambah Data</a>
                 <div class="">
-                    <table class="table table-md table-hover table-bordered" id="karyawanTable">
+                    <table class="table table-md table-hover table-bordered" id="klienTable">
                         <thead>
                         <tr>
                             <th>No</th>
