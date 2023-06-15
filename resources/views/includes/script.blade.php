@@ -67,13 +67,13 @@
                 }
             },
             series: [{
-                name: 'BUMN',
+                name: 'Pemerintah',
                 data: [50, 70, 90, 80, 60, 75, 85, 95, 100, 90, 80, 70]
             }, {
                 name: 'Swasta',
                 data: [70, 60, 85, 95, 80, 90, 75, 60, 70, 85, 90, 80]
             }, {
-                name: 'Pemerintah',
+                name: 'Lainnya',
                 data: [80, 90, 75, 70, 85, 60, 80, 90, 70, 95, 75, 85]
             }]
         });
