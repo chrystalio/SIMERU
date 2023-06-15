@@ -12,6 +12,7 @@
             <li class="{{ request()->routeIs('department.index') ? 'active' : ' ' }}"><a class="nav-link" href="{{ url('/dashboard/department') }}"><i class="fa-solid fa-building"></i> <span>Department</span></a></li>
             <li class="{{ request()->routeIs('proyek.index') ? 'active' : ' ' }}"><a class="nav-link" href="{{ url('/dashboard/proyek') }}"><i class="fa-solid fa-folder"></i> <span>Projects</span></a></li>
             <li class="{{ request()->routeIs('laporan.index') ? 'active' : ' ' }}"><a class="nav-link" href="{{ url('/dashboard/laporan') }}"><i class="fa-solid fa-file"></i> <span>Laporan</span></a></li>
+            <li class="{{ request()->routeIs('klien.index') ? 'active' : ' ' }}"><a class="nav-link" href="{{ url('/dashboard/klien') }}"><i class="fa-solid fa-file"></i> <span>Klien</span></a></li>
         </ul>
     </aside>
 </div>
