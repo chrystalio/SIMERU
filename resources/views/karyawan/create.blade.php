@@ -46,8 +46,8 @@
                                 @endforeach
                             </select>
                         </div>
-
                     </div>
+                    <a href="{{ route('karyawan.index') }}" class="btn btn-secondary mr-lg-2">Kembali</a>
                     <button type="submit" class="btn btn-primary m-100">Tambah Data</button>
                 </form>
             </div>
