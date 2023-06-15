@@ -11,7 +11,7 @@
             <div class="card-body bg-white my-2 rounded">
                 <a href="{{ route('proyek.create') }}" class="btn btn-primary my-3">Tambah Data</a>
                 <div class="">
-                    <table class="table table-md table-hover table-bordered" id="myTable">
+                    <table class="table table-md table-hover table-bordered" id="projectTable">
                         <thead>
                         <tr>
                             <th>No</th>
