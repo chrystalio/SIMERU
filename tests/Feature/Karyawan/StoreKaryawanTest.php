@@ -42,17 +42,9 @@ class StoreKaryawanTest extends TestCase
 
         $request = Karyawan::factory()->make()->toArray();
         $response = $this->post(route('karyawan.store'), $request);
-        $this->assertDatabaseHas(
-            'karyawan',
-            [
-                'nama' => $request['nama'],
-                'alamat' => $request['alamat'],
-                'no_telp' => $request['no_telp'],
-                'email' => $request['email'],
-                'department_id' => $request['department_id']
-            ]
-        );
         $response->assertRedirect(route('karyawan.index'));
+        $response->assertSessionHas('success', 'Karyawan Created Successfully!');
+        $this->assertDatabaseHas('karyawan', $request);
     }
 
     /**

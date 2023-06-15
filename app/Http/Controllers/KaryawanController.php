@@ -26,7 +26,7 @@ class KaryawanController extends Controller
     {
         Karyawan::create($request->validated());
 
-        return redirect()->route('karyawan.index');
+        return redirect()->route('karyawan.index')->with('success', 'Karyawan Created Successfully!');
     }
 
     public function edit(Karyawan $karyawan): View
@@ -40,13 +40,13 @@ class KaryawanController extends Controller
     {
         $karyawan->update($request->validated());
 
-        return redirect()->route('karyawan.index');
+        return redirect()->route('karyawan.index')->with('success', 'Karyawan Updated Successfully!');
     }
 
     public function delete(Karyawan $karyawan): RedirectResponse
     {
         $karyawan->delete();
 
-        return redirect()->route('karyawan.index');
+        return redirect()->route('karyawan.index')->with('success', 'Karyawan Deleted Successfully!');
     }
 }
