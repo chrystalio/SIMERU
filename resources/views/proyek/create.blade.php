@@ -48,6 +48,17 @@
                         @endforeach
                     </select>
                     </div>
+                    <div class="form-group">
+                        <label for="status">Status Project</label>
+                        <select class="form-control" id="status" name="status">
+                            <option selected disabled>Pilih Status</option>
+                            <option value="NOT STARTED">NOT STARTED</option>
+                            <option value="PENDING">PENDING</option>
+                            <option value="CANCELLED">CANCELLED</option>
+                            <option value="ON PROGRESS">ON PROGRESS</option>
+                            <option value="FINISHED">FINISHED</option>
+                        </select>
+                    </div>
 
                     <a href="{{ route('proyek.index') }}" class="btn btn-secondary mr-lg-2">Kembali</a>
                     <button type="submit" class="btn btn-primary m-100">Tambah Data</button>
