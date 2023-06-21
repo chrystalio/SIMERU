@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Login 04</title>
+    <title>Login Page - SIMERU</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
-                <h2 class="heading-section">SISTEM INFORMASI MANAGEMENT PERUSAHAAN</h2>
+                <h3 class="heading-section">PT Best Solution - Sistem Informasi Manajemen Perusahaan <b>(SIMERU)</b></h3>
             </div>
         </div>
         <div class="row justify-content-center">
