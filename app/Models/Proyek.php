@@ -23,7 +23,8 @@ class Proyek extends Model
         'deskripsi',
         'tanggal_mulai',
         'tanggal_selesai',
-        'karyawan_id'
+        'karyawan_id',
+        'status'
     ];
 
     public function karyawan(): BelongsTo
