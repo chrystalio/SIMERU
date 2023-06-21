@@ -27,7 +27,8 @@ class StoreProyekRequest extends FormRequest
             'deskripsi' => 'required|string|max:255',
             'tanggal_mulai' => 'required|date',
             'tanggal_selesai' => 'required|date',
-            'karyawan_id' => 'required|int|exists:karyawan,id'
+            'karyawan_id' => 'required|int|exists:karyawan,id',
+            'status' => 'required|string|max:255'
         ];
     }
 }
