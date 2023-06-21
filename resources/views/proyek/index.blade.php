@@ -20,6 +20,7 @@
                             <th>Tanggal Mulai</th>
                             <th>Tanggal Deadline</th>
                             <th>Karyawan</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -32,6 +33,17 @@
                                 <td>{{ $data->tanggal_mulai }}</td>
                                 <td>{{ $data->tanggal_selesai }}</td>
                                 <td>{{ $data->karyawan->nama }}</td>
+                                <td>
+                                    @if ($data->status === 'NOT STARTED')
+                                        <span class="badge badge-danger">Not Done</span>
+                                    @elseif($data->status === 'PENDING')
+                                        <span class="badge badge-primary">Pending</span>
+                                    @elseif ($data->status === 'ON PROGRESS')
+                                        <span class="badge badge-warning">On Progress</span>
+                                    @elseif ($data->status === 'FINISHED')
+                                        <span class="badge badge-success">Done</span>
+                                    @endif
+                                </td>
                                 <td>
                                     <a href="{{ route('proyek.edit', $data->id) }}" class="btn btn-warning">Edit</a>
                                     <form action="{{ route('proyek.delete', $data->id) }}" method="POST" class="d-inline">
