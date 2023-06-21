@@ -53,6 +53,18 @@
                         </select>
                     </div>
 
+                    <div class="form-group">
+                        <label for="status">Status Project</label>
+                        <select class="form-control" id="status" name="status">
+                            <option value="" selected disabled>Pilih Status</option>
+                            <option value="NOT STARTED" {{ $proyek->status == 'NOT STARTED' ? 'selected' : '' }}>NOT STARTED</option>
+                            <option value="PENDING" {{ $proyek->status == 'PENDING' ? 'selected' : '' }}>PENDING</option>
+                            <option value="ON PROGRESS" {{ $proyek->status == 'ON PROGRESS' ? 'selected' : '' }}>ON PROGRESS</option>
+                            <option value="CANCELLED" {{ $proyek->status == 'CANCELLED' ? 'selected' : '' }}>CANCELLED</option>
+                            <option value="FINISHED" {{ $proyek->status == 'FINISHED' ? 'selected' : '' }}>FINISHED</option>
+                        </select>
+                    </div>
+
                     <a href="{{ route('proyek.index') }}" class="btn btn-secondary mr-lg-2">Kembali</a>
                     <button type="submit" class="btn btn-primary m-100">Update Data</button>
                 </form>
