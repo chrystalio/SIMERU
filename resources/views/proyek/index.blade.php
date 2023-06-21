@@ -35,13 +35,15 @@
                                 <td>{{ $data->karyawan->nama }}</td>
                                 <td>
                                     @if ($data->status === 'NOT STARTED')
-                                        <span class="badge badge-danger">Not Done</span>
+                                        <span class="badge badge-dark">NOT STARTED</span>
                                     @elseif($data->status === 'PENDING')
-                                        <span class="badge badge-primary">Pending</span>
+                                        <span class="badge badge-warning">PENDING</span>
                                     @elseif ($data->status === 'ON PROGRESS')
-                                        <span class="badge badge-warning">On Progress</span>
+                                        <span class="badge badge-primary">ON PROGRESS</span>
+                                    @elseif($data->status === 'CANCELLED')
+                                        <span class="badge badge-danger">CANCELLED</span>
                                     @elseif ($data->status === 'FINISHED')
-                                        <span class="badge badge-success">Done</span>
+                                        <span class="badge badge-success">FINISHED</span>
                                     @endif
                                 </td>
                                 <td>
