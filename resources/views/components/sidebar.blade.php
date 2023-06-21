@@ -1,10 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="#">SIMPERUSA</a>
+            <a href="#">SIMERU</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="#">SP</a>
+            <a href="#">SM</a>
         </div>
         <ul class="sidebar-menu">
             <li class={{ request()->routeIs('dashboard') ? 'active' : ' ' }}><a class="nav-link" href="{{ url('/dashboard') }}"><i class="fa-solid fa-layer-group"></i> <span>Dashboard</span></a></li>
