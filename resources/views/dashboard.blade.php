@@ -97,7 +97,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($proyekData['FINISHED']  as $finished)
+                                    @foreach($proyekData  as $finished)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $finished->nama }}</td>

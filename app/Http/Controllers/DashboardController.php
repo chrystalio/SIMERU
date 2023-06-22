@@ -10,12 +10,7 @@ class DashboardController extends Controller
 {
     public function index(): View
     {
-        $proyekData = Proyek::query()->with(['karyawan'])->orderBy('status')->latest()->get()
-        ->groupBy('status')
-        ->map(function ($group) {
-            return $group->take(2);
-        });
-
+        $proyekData = Proyek::query()->with(['karyawan'])->latest('updated_at')->take(5)->get();
         return view('dashboard', compact('proyekData'));
     }
 }
