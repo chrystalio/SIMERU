@@ -17,7 +17,9 @@ class ProyekFactory extends Factory
             'deskripsi' => $this->faker->text,
             'tanggal_mulai' => $this->faker->date(),
             'tanggal_selesai' => $this->faker->date(),
-            'karyawan_id' => Karyawan::factory()
+            'karyawan_id' => Karyawan::factory(),
+            'status' => $this->faker->randomElement(['NOT STARTED', 'PENDING', 'CANCELLED', 'ON PROGRESS','FINISHED']),
+            'created_at' => $this->faker->dateTime(),
         ];
     }
 }
