@@ -12,6 +12,7 @@
 <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.highcharts.com/modules/variable-pie.js"></script>
 
 <!-- Page Specific JS File -->
 <script>
@@ -133,6 +134,66 @@
                 }]
             }]
         });
+
+        const chart3 = Highcharts.chart('projectStatus', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: true,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Project Status Percentage',
+                    align: 'center'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                accessibility: {
+                    point: {
+                        valueSuffix: '%'
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Progress',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'NOT STARTED',
+                        y: 55.67,
+                    }, {
+                        name: 'ON PROGRESS',
+                        y: 14.77
+                    },  {
+                        name: 'PENDING',
+                        y: 42.86
+                    }, {
+                        name: 'FINISHED',
+                        y: 90.53,
+                        sliced: true,
+                        selected: true
+                    }, {
+                        name: 'CANCELLED',
+                        y: 23.63
+                    },]
+                }],
+                colors: [
+                    '#191d21',
+                    '#6777ef',
+                    '#ff9900',
+                    '#47c363',
+                    '#fc544b'
+                ]
+            });
 
     });
 
