@@ -17,6 +17,7 @@ class Karyawan extends Model
         'alamat',
         'no_telp',
         'email',
+        'role',
         'department_id',
     ];
 
