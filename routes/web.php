@@ -24,46 +24,60 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', fn() => redirect()->route('dashboard'));
-
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', DashboardController::class);
 
     Route::prefix('/dashboard')->group(function () {
-        Route::get('/karyawan', [KaryawanController::class, 'index'])->name('karyawan.index');
-        Route::get('/karyawan/create', [KaryawanController::class, 'create'])->name('karyawan.create');
-        Route::post('/karyawan/create', [KaryawanController::class, 'store'])->name('karyawan.store');
-        Route::get('/karyawan/edit', [KaryawanController::class, 'edit'])->name('karyawan.edit');
-        Route::get('/update/karyawan/{karyawan}', [KaryawanController::class, 'edit'])->name('karyawan.edit');
-        Route::put('/update/karyawan/{karyawan}', [KaryawanController::class, 'update'])->name('karyawan.update');
-        Route::delete('/karyawan/{karyawan}', [KaryawanController::class, 'delete'])->name('karyawan.delete');
+        // Karyawan routes
+        Route::prefix('/karyawan')->group(function () {
+            Route::get('/', [KaryawanController::class, 'index'])->name('karyawan.index');
+            Route::get('/create', [KaryawanController::class, 'create'])->name('karyawan.create');
+            Route::post('/create', [KaryawanController::class, 'store'])->name('karyawan.store');
+            Route::get('/edit', [KaryawanController::class, 'edit'])->name('karyawan.edit');
+            Route::get('/update/{karyawan}', [KaryawanController::class, 'edit'])->name('karyawan.edit');
+            Route::put('/update/{karyawan}', [KaryawanController::class, 'update'])->name('karyawan.update');
+            Route::delete('/{karyawan}', [KaryawanController::class, 'delete'])->name('karyawan.delete');
+        });
 
-        Route::get('/department', [DepartmentController::class, 'index'])->name('department.index');
-        Route::get('/department/create', [DepartmentController::class, 'create'])->name('department.create');
-        Route::post('/department/create', [DepartmentController::class, 'store'])->name('department.store');
-        Route::get('/department/edit', [DepartmentController::class, 'edit'])->name('department.edit');
-        Route::get('/update/department/{department}', [DepartmentController::class, 'edit'])->name('department.edit');
-        Route::put('/update/department/{department}', [DepartmentController::class, 'update'])->name('department.update');
-        Route::delete('/department/{department}', [DepartmentController::class, 'destroy'])->name('department.delete');
+        // Department routes
+        Route::prefix('/department')->group(function () {
+            Route::get('/', [DepartmentController::class, 'index'])->name('department.index');
+            Route::get('/create', [DepartmentController::class, 'create'])->name('department.create');
+            Route::post('/create', [DepartmentController::class, 'store'])->name('department.store');
+            Route::get('/edit', [DepartmentController::class, 'edit'])->name('department.edit');
+            Route::get('/update/{department}', [DepartmentController::class, 'edit'])->name('department.edit');
+            Route::put('/update/{department}', [DepartmentController::class, 'update'])->name('department.update');
+            Route::delete('/{department}', [DepartmentController::class, 'destroy'])->name('department.delete');
+        });
 
-        Route::get('/proyek', [ProyekController::class, 'index'])->name('proyek.index');
-        Route::get('/proyek/create', [ProyekController::class, 'create'])->name('proyek.create');
-        Route::post('/proyek', [ProyekController::class, 'store'])->name('proyek.store');
-        Route::get('/proyek/{proyek}/edit', [ProyekController::class, 'edit'])->name('proyek.edit');
-        Route::put('/proyek/{proyek}', [ProyekController::class, 'update'])->name('proyek.update');
-        Route::delete('/proyek/{proyek}', [ProyekController::class, 'delete'])->name('proyek.delete');
+        // Proyek routes
+        Route::prefix('/proyek')->group(function () {
+            Route::get('/', [ProyekController::class, 'index'])->name('proyek.index');
+            Route::get('/create', [ProyekController::class, 'create'])->name('proyek.create');
+            Route::post('/', [ProyekController::class, 'store'])->name('proyek.store');
+            Route::get('/{proyek}/edit', [ProyekController::class, 'edit'])->name('proyek.edit');
+            Route::put('/{proyek}', [ProyekController::class, 'update'])->name('proyek.update');
+            Route::delete('/{proyek}', [ProyekController::class, 'delete'])->name('proyek.delete');
+        });
 
-        Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
-        Route::get('/laporan/create', [LaporanController::class, 'create'])->name('laporan.create');
-        Route::post('/laporan', [LaporanController::class, 'store'])->name('laporan.store');
-        Route::get('/laporan/{laporan}/edit', [LaporanController::class, 'edit'])->name('laporan.edit');
-        Route::put('/laporan/{laporan}', [LaporanController::class, 'update'])->name('laporan.update');
-        Route::delete('/laporan/delete/{laporan}', [LaporanController::class, 'delete'])->name('laporan.delete');
+        // Laporan routes
+        Route::prefix('/laporan')->group(function () {
+            Route::get('/', [LaporanController::class, 'index'])->name('laporan.index');
+            Route::get('/create', [LaporanController::class, 'create'])->name('laporan.create');
+            Route::post('/', [LaporanController::class, 'store'])->name('laporan.store');
+            Route::get('/{laporan}/edit', [LaporanController::class, 'edit'])->name('laporan.edit');
+            Route::put('/{laporan}', [LaporanController::class, 'update'])->name('laporan.update');
+            Route::delete('/delete/{laporan}', [LaporanController::class, 'delete'])->name('laporan.delete');
+        });
 
-        Route::get('/klien', [KlienController::class, 'index'])->name('klien.index');
-        Route::get('/klien/create', [KlienController::class, 'create'])->name('klien.create');
-        Route::post('/klien', [KlienController::class, 'store'])->name('klien.store');
-        Route::get('/klien/{klien}/edit', [KlienController::class, 'edit'])->name('klien.edit');
-        Route::put('/klien/{klien}', [KlienController::class, 'update'])->name('klien.update');
-        Route::delete('/klien/{klien}', [KlienController::class, 'delete'])->name('klien.delete');
+        // Klien routes
+        Route::prefix('/klien')->group(function () {
+            Route::get('/', [KlienController::class, 'index'])->name('klien.index');
+            Route::get('/create', [KlienController::class, 'create'])->name('klien.create');
+            Route::post('/', [KlienController::class, 'store'])->name('klien.store');
+            Route::get('/{klien}/edit', [KlienController::class, 'edit'])->name('klien.edit');
+            Route::put('/{klien}', [KlienController::class, 'update'])->name('klien.update');
+            Route::delete('/{klien}', [KlienController::class, 'delete'])->name('klien.delete');
+        });
     });
 });
 
