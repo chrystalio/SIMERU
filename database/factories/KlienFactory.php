@@ -18,8 +18,8 @@ class KlienFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama' => $this->faker->name,
-            'email' => $this->faker->email,
+            'nama' => $this->faker->company,
+            'email' => $this->faker->companyEmail,
             'alamat' => $this->faker->address,
             'no_telp' => $this->faker->phoneNumber,
             'proyek_id' => Proyek::factory()
