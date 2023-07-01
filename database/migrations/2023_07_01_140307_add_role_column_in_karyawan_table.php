@@ -8,7 +8,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('karyawan', function (Blueprint $table) {
-            $table->string('role')->default('employee')->after('email');
+            $table->string('role')->default('Employee')->after('email');
         });
     }
 };
