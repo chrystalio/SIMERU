@@ -6,6 +6,8 @@
     document.addEventListener('DOMContentLoaded', function() {
         const karyawanRolePercentage = @json($karyawanRolePercentage);
         const projectStatusPercentage = @json($projectStatusPercentage);
+        const projectCategoryPercentage = @json($projectCategoryPercentage);
+
         const chartProjectPercentage = Highcharts.chart('projectPercentage', {
             chart: {
                 type: 'column'
@@ -33,13 +35,13 @@
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Progress (%)'
+                    text: 'Total Projects'
                 }
             },
             tooltip: {
                 headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                 pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>{point.y:.1f}%</b></td></tr>',
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
                 footerFormat: '</table>',
                 shared: true,
                 useHTML: true
@@ -50,17 +52,21 @@
                     borderWidth: 0
                 }
             },
-            series: [{
-                name: 'Pemerintah',
-                data: [50, 70, 90, 80, 60, 75, 85, 95, 100, 90, 80, 70]
-            }, {
-                name: 'Swasta',
-                data: [70, 60, 85, 95, 80, 90, 75, 60, 70, 85, 90, 80]
-            }, {
-                name: 'Lainnya',
-                data: [80, 90, 75, 70, 85, 60, 80, 90, 70, 95, 75, 85]
-            }]
+            series: projectCategoryPercentage.reduce((seriesArray, data) => {
+                const monthData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // Initialize array with zeros
+                const month = data.month - 1; // Adjust month to match the array index
+                monthData[month] = data.total; // Set the total for the corresponding month
+                const existingSeries = seriesArray.find(series => series.name === data.kategori);
+                if (existingSeries) {
+                    existingSeries.data = monthData; // Update existing series data
+                } else {
+                    seriesArray.push({ name: data.kategori, data: monthData }); // Add new series
+                }
+                return seriesArray;
+            }, [])
         });
+
+
         const chartEmployeePercentage = Highcharts.chart('employeePercentage', {
             chart: {
                 plotBackgroundColor: null,
