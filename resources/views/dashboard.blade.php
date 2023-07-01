@@ -81,9 +81,9 @@
             </div>
 
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <div class="card p-2">
-                        <div class="card-body p-3">
+                        <div class="card-body p-2">
                             <h6>Latest Project Status</h6>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover table-sm text-center">
@@ -128,13 +128,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <div id="projectStatus" style="width:100%; height:309px;"></div>
                 </div>
-                <div class="col-md-7 col-sm-12">
+                <div class="col-md-8 col-sm-12">
                     <div id="projectPercentage" style="width:100%; height:280px;"></div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <div id="employeePercentage" style="width:100%; height:280px;"></div>
                 </div>
             </div>
