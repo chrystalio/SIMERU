@@ -86,7 +86,7 @@
                         <div class="card-body p-2">
                             <h6>Latest Project Status</h6>
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover table-sm text-center">
+                                <table class="table table-bordered table-hover table-sm">
                                     <thead>
                                     <tr>
                                         <th>No</th>
