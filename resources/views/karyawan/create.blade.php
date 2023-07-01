@@ -24,11 +24,17 @@
                             <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="email@example.net" aria-describedby="emailHelp">
-                        <small id="emailHelp" class="form-text text-danger">Input email dengan benar.
-                        </small>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="email@example.net" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-danger">Input email dengan benar.
+                            </small>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="role">Jabatan</label>
+                            <input type="text" class="form-control" id="role" name="role">
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">

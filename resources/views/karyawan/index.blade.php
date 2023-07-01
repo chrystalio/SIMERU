@@ -19,6 +19,7 @@
                             <th>Alamat</th>
                             <th>No HP</th>
                             <th>Email</th>
+                            <th>Jabatan</th>
                             <th>Department</th>
                             <th>Action</th>
                         </tr>
@@ -31,6 +32,7 @@
                                 <td>{{ $data->alamat }}</td>
                                 <td>{{ $data->no_telp }}</td>
                                 <td>{{ $data->email }}</td>
+                                <td>{{ $data->role }}</td>
                                 <td>{{ $data->department->nama }}</td>
                                 <td>
                                     <a href="{{ route('karyawan.edit', $data->id) }}" class="btn btn-warning">Edit</a>
