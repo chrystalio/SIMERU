@@ -30,7 +30,7 @@
                                             Karyawan
                                         </a>
                                     </h6>
-                                    <h6 class="font-extrabold mb-0">190</h6>
+                                    <h6 class="font-extrabold mb-0">{{ $karyawanCount }}</h6>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                                             Projects
                                         </a>
                                     </h6>
-                                    <h6 class="font-extrabold mb-0">40</h6>
+                                    <h6 class="font-extrabold mb-0">{{ $proyekCount }}</h6>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($proyekData as $finished)
+                                    @forelse($proyekData as $finished)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $finished->nama }}</td>
@@ -117,7 +117,11 @@
                                                 @endif
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @empty
+                                        <tr>
+                                            <td colspan="5" class="text-center">No Data</td>
+                                        </tr>
+                                    @endforelse
                                     </tbody>
                                 </table>
                             </div>
