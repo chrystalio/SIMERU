@@ -132,12 +132,13 @@
                     <div id="projectStatus" style="width:100%; height:309px;"></div>
                 </div>
                 <div class="col-md-8 col-sm-12">
-                    <div id="container" style="width:100%; height:280px;"></div>
+                    <div id="projectPercentage" style="width:100%; height:280px;"></div>
                 </div>
                 <div class="col-md-4">
-                    <div id="container1" style="width:100%; height:280px;"></div>
+                    <div id="employeePercentage" style="width:100%; height:280px;"></div>
                 </div>
             </div>
         </div>
     </section>
 @endsection
+@include('includes.charts')
