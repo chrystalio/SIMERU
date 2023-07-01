@@ -5,6 +5,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const karyawanRolePercentage = @json($karyawanRolePercentage);
+        const projectStatusPercentage = @json($projectStatusPercentage);
         const chartProjectPercentage = Highcharts.chart('projectPercentage', {
             chart: {
                 type: 'column'
@@ -132,31 +133,17 @@
             series: [{
                 name: 'Progress',
                 colorByPoint: true,
-                data: [{
-                    name: 'NOT STARTED',
-                    y: 55.67,
-                }, {
-                    name: 'ON PROGRESS',
-                    y: 14.77
-                },  {
-                    name: 'PENDING',
-                    y: 42.86
-                }, {
-                    name: 'FINISHED',
-                    y: 90.53,
-                    sliced: true,
-                    selected: true
-                }, {
-                    name: 'CANCELLED',
-                    y: 23.63
-                },]
+                data: projectStatusPercentage.map(data => ({
+                    name: data.status,
+                    y: data.total,
+                }))
             }],
             colors: [
-                '#191d21',
-                '#6777ef',
                 '#ff9900',
                 '#47c363',
-                '#fc544b'
+                '#6777ef',
+                '#191d21',
+                '#fc544b',
             ]
         });
     });
