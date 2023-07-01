@@ -23,7 +23,7 @@ class KaryawanFactory extends Factory
             'no_telp' => $this->faker->phoneNumber,
             'email' => $this->faker->email,
             'role' => 'employee', // add this line
-            'department_id' => Department::factory(),
+            'department_id' => Department::inRandomOrder()->first()->id,
         ];
     }
 }
