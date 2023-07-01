@@ -23,7 +23,14 @@ class DashboardController extends Controller
             ->groupBy('status')
             ->get();
 
-        return view('dashboard', compact('proyekCount', 'karyawanCount', 'proyekData', 'karyawanRolePercentage', 'projectStatusPercentage'));
+        $projectCategoryPercentage = Proyek::select(\DB::raw('MONTH(tanggal_selesai) as month'), 'kategori', \DB::raw('count(*) as total'))
+            ->where('status', 'FINISHED')
+            ->groupBy('month', 'kategori')
+            ->get();
+
+
+
+        return view('dashboard', compact('proyekCount', 'karyawanCount', 'proyekData', 'karyawanRolePercentage', 'projectStatusPercentage', 'projectCategoryPercentage'));
     }
 }
 
