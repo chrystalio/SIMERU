@@ -65,6 +65,16 @@
                         </select>
                     </div>
 
+                    <div class="form-group">
+                        <label for="kategori">Kategori</label>
+                        <select class="form-control" id="kategori" name="kategori">
+                            <option selected disabled>Pilih Status</option>
+                            <option value="PEMERINTAH" {{ $proyek->kategori == 'PEMERINTAH' ? 'selected' : '' }}>PEMERINTAH</option>
+                            <option value="SWASTA" {{ $proyek->kategori == 'SWASTA' ? 'selected' : '' }}>SWASTA</option>
+                            <option value="LAINNYA" {{ $proyek->kategori == 'LAINNYA' ? 'selected' : '' }}>LAINNYA</option>
+                        </select>
+                    </div>
+
                     <a href="{{ route('proyek.index') }}" class="btn btn-secondary mr-lg-2">Kembali</a>
                     <button type="submit" class="btn btn-primary m-100">Update Data</button>
                 </form>

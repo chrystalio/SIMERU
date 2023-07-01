@@ -20,6 +20,7 @@
                             <th>Tanggal Mulai</th>
                             <th>Tanggal Deadline</th>
                             <th>Karyawan</th>
+                            <th>Kategori</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -33,6 +34,7 @@
                                 <td>{{ $data->tanggal_mulai }}</td>
                                 <td>{{ $data->tanggal_selesai }}</td>
                                 <td>{{ $data->karyawan->nama }}</td>
+                                <td>{{ $data->kategori }}</td>
                                 <td>
                                     @if ($data->status === 'NOT STARTED')
                                         <span class="badge badge-dark">NOT STARTED</span>

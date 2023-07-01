@@ -23,6 +23,7 @@ class Proyek extends Model
         'deskripsi',
         'tanggal_mulai',
         'tanggal_selesai',
+        'kategori',
         'karyawan_id',
         'status'
     ];
