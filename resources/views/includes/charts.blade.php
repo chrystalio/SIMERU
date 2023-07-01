@@ -136,15 +136,27 @@
                 data: projectStatusPercentage.map(data => ({
                     name: data.status,
                     y: data.total,
+                    selected: data.status === 'SUCCESS',
+                    sliced: data.status === 'SUCCESS'
+
                 }))
             }],
-            colors: [
-                '#ff9900',
-                '#47c363',
-                '#6777ef',
-                '#191d21',
-                '#fc544b',
-            ]
+            colors: projectStatusPercentage.map(data => getColorByStatus(data.status))
         });
     });
+
+    function getColorByStatus(status){
+        switch(status){
+            case 'PENDING':
+                return '#ff9900';
+            case 'FINISHED':
+                return '#47c363';
+            case 'ON PROGRESS':
+                return '#6777ef';
+            case 'NOT STARTED':
+                return '#191d21';
+            case 'CANCELLED':
+                return '#fc544b';
+        }
+    }
 </script>
