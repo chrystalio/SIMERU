@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', fn() => redirect()->route('dashboard'));
-    Route::get('/dashboard', DashboardController::class);
+    Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
     Route::prefix('/dashboard')->group(function () {
         // Karyawan routes
