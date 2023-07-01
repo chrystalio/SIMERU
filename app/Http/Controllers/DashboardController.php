@@ -19,8 +19,11 @@ class DashboardController extends Controller
             ->groupBy('role')
             ->get();
 
+        $projectStatusPercentage = Proyek::select('status', \DB::raw('count(*) as total'))
+            ->groupBy('status')
+            ->get();
 
-        return view('dashboard', compact('proyekCount', 'karyawanCount', 'proyekData', 'karyawanRolePercentage'));
+        return view('dashboard', compact('proyekCount', 'karyawanCount', 'proyekData', 'karyawanRolePercentage', 'projectStatusPercentage'));
     }
 }
 
