@@ -57,7 +57,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-4 col-md-6">
+                <div class="col-12 col-sm-12 col-lg-4 col-md-6">
                     <div class="card">
                         <div class="card-body px-4 py-4-5">
                             <div class="row">
@@ -81,19 +81,20 @@
             </div>
 
             <div class="row">
-                <div class="col-md-8">
-                    <div class="card p-2">
-                        <div class="card-body p-2">
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-body" style="height: 280px">
                             <h6>Latest Project Status</h6>
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover table-sm">
+                                <table class="table table-bordered table-sm text-center">
                                     <thead>
                                     <tr>
-                                        <th>No</th>
+                                        <th>#</th>
                                         <th>Project Name</th>
                                         <th>Deadline</th>
                                         <th>Handled By</th>
                                         <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -116,6 +117,10 @@
                                                     <span class="badge badge-success">FINISHED</span>
                                                 @endif
                                             </td>
+                                            <td>
+                                                <a href="{{ route('proyek.index', $finished->id) }}"
+                                                   class="btn btn-sm btn-primary">Detail</a>
+                                            </td>
                                         </tr>
                                     @empty
                                         <tr>
@@ -126,19 +131,21 @@
                                 </table>
                             </div>
                         </div>
+
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div id="projectStatus" style="width:100%; height:309px;"></div>
+                <div class="col-md-5">
+                    <div id="employeePercentage" style="width:100%; height:280px;"></div>
                 </div>
                 <div class="col-md-8 col-sm-12">
                     <div id="projectPercentage" style="width:100%; height:280px;"></div>
                 </div>
                 <div class="col-md-4">
-                    <div id="employeePercentage" style="width:100%; height:280px;"></div>
+                    <div id="projectStatus" style="width:100%; height:280px;"></div>
                 </div>
             </div>
         </div>
     </section>
 @endsection
+
 @include('includes.charts')
