@@ -25,6 +25,13 @@
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 
 <script>
+    document.getElementById('logout-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('form-logout').submit();
+    });
+</script>
+
+<script>
     var toastMixin = Swal.mixin({
         toast: true,
         icon: 'success',

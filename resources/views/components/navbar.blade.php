@@ -19,7 +19,7 @@
                 <form action="{{ route('logout') }}" id="form-logout" method="POST">
                     @csrf
                 </form>
-                <a href="#" onclick="$('#form-logout').submit();" class="dropdown-item has-icon text-danger">
+                <a href="#" id="logout-link" class="dropdown-item has-icon text-danger">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </a>
             </div>
