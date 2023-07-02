@@ -28,9 +28,9 @@
                         @foreach($karyawanData as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $data->nama }}</td>
-                                <td>{{ $data->alamat }}</td>
-                                <td>{{ $data->no_telp }}</td>
+                                <td>{{ $data->name }}</td>
+                                <td>{{ $data->address }}</td>
+                                <td>{{ $data->phone }}</td>
                                 <td>{{ $data->email }}</td>
                                 <td>{{ $data->role }}</td>
                                 <td>{{ $data->department->nama }}</td>
