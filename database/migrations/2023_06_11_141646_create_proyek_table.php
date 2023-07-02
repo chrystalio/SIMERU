@@ -18,10 +18,10 @@ return new class extends Migration
             $table->date('tanggal_mulai');
             $table->date('tanggal_selesai');
             $table->string('kategori');
-            $table->unsignedBigInteger('karyawan_id');
+            $table->uuid('karyawan_uuid');
             $table->timestamps();
 
-            $table->foreign('karyawan_id')->references('id')->on('karyawan')->onDelete('cascade');
+            $table->foreign('karyawan_uuid')->references('uuid')->on('karyawan')->onDelete('cascade');
         });
     }
 
