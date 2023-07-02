@@ -35,8 +35,8 @@
                                 <td>{{ $data->role }}</td>
                                 <td>{{ $data->department->nama }}</td>
                                 <td>
-                                    <a href="{{ route('karyawan.edit', $data->id) }}" class="btn btn-warning">Edit</a>
-                                    <form action="{{ route('karyawan.delete', $data->id) }}" method="POST" class="d-inline">
+                                    <a href="{{ route('karyawan.edit', $data->uuid) }}" class="btn btn-warning">Edit</a>
+                                    <form action="{{ route('karyawan.delete', $data->uuid) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">Delete</button>

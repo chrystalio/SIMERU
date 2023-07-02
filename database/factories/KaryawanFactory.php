@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Department;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Karyawan>
@@ -22,7 +23,7 @@ class KaryawanFactory extends Factory
             'alamat' => $this->faker->address,
             'no_telp' => $this->faker->phoneNumber,
             'email' => $this->faker->email,
-            'role' => 'Employee', // add this line
+            'role' => 'Staff', // add this line
             'department_id' => Department::inRandomOrder()->first()->id,
         ];
     }
