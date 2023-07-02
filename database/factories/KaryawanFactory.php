@@ -19,9 +19,9 @@ class KaryawanFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama' => $this->faker->name,
-            'alamat' => $this->faker->address,
-            'no_telp' => $this->faker->phoneNumber,
+            'name' => $this->faker->name,
+            'address' => $this->faker->address,
+            'phone' => $this->faker->phoneNumber,
             'email' => $this->faker->email,
             'role' => 'Staff', // add this line
             'department_id' => Department::inRandomOrder()->first()->id,
