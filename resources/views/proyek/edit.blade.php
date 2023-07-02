@@ -45,12 +45,15 @@
                     </div>
                     <div class="form-group">
                         <label for="karyawan_id">Karyawan</label>
-                        <select class="form-control" id="karyawan_id" name="karyawan_id">
+                        <select class="form-control" id="karyawan_uuid" name="karyawan_uuid">
                             <option value="" selected disabled>Pilih Karyawan</option>
                             @foreach($karyawanData as $data)
-                                <option value="{{ $data->id }}" {{ $data->id == $proyek->karyawan_id ? 'selected' : '' }}>{{ $data->nama }}</option>
+                                <option value="{{ $data->uuid }}" @selected($data->uuid == $proyek->karyawan_uuid)>{{ $data->name }}</option>
                             @endforeach
                         </select>
+                        @error('karyawan_uuid')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="form-group">

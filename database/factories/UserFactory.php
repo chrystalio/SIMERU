@@ -17,12 +17,13 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        // this one is for common user
         return [
             'name' => fake()->name(),
-            'username' => 'admin',
+            'username' => fake()->unique()->userName(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => bcrypt('admin'),
+            'password' => bcrypt('password'),
             'remember_token' => Str::random(10),
         ];
     }
@@ -36,4 +37,16 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+
+    // then if you want to create admin user, you can use this
+    // User::factory()->admin()->create();
+    public function admin(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'username' => 'admin',
+            'password' => bcrypt('admin'),
+        ]);
+    }
 }
+    
+

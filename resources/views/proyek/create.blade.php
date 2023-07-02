@@ -41,12 +41,15 @@
                     </div>
                     <div class="form-group">
                     <label for="karyawan_id">Karyawan</label>
-                    <select class="form-control" id="karyawan_id" name="karyawan_id">
+                    <select class="form-control" id="karyawan_uuid" name="karyawan_uuid">
                         <option value="" selected disabled>Pilih Karyawan</option>
                         @foreach($karyawanData as $data)
-                            <option value="{{ $data->id }}">{{ $data->nama }}</option>
+                            <option value="{{ $data->uuid }}">{{ $data->name }}</option>
                         @endforeach
                     </select>
+                    @error('karyawan_uuid')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                     </div>
                     <div class="form-group">
                         <label for="status">Status Project</label>
@@ -58,6 +61,9 @@
                             <option value="ON PROGRESS">ON PROGRESS</option>
                             <option value="FINISHED">FINISHED</option>
                         </select>
+                        @error('status')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="kategori">Kategori</label>
@@ -67,6 +73,9 @@
                             <option value="SWASTA">SWASTA</option>
                             <option value="LAINNYA">LAINNYA</option>
                         </select>
+                        @error('kategori')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <a href="{{ route('proyek.index') }}" class="btn btn-secondary mr-lg-2">Kembali</a>

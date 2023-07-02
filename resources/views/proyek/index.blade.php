@@ -33,7 +33,7 @@
                                 <td>{{ $data->deskripsi }}</td>
                                 <td>{{ $data->tanggal_mulai }}</td>
                                 <td>{{ $data->tanggal_selesai }}</td>
-                                <td>{{ $data->karyawan->nama }}</td>
+                                <td>{{ $data->karyawan->name }}</td>
                                 <td>{{ $data->kategori }}</td>
                                 <td>
                                     @if ($data->status === 'NOT STARTED')

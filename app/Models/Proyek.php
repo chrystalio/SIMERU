@@ -12,7 +12,6 @@ class Proyek extends Model
 
     protected $table = 'proyek';
 
-
     protected array $dates = [
         'tanggal_mulai',
         'tanggal_selesai'
@@ -24,7 +23,7 @@ class Proyek extends Model
         'tanggal_mulai',
         'tanggal_selesai',
         'kategori',
-        'karyawan_id',
+        'karyawan_uuid',
         'status'
     ];
 
