@@ -22,9 +22,9 @@ class Karyawan extends Model
 
     protected $fillable = [
         'uuid', // add this line
-        'nama',
-        'alamat',
-        'no_telp',
+        'name',
+        'address',
+        'phone',
         'email',
         'role',
         'department_id',
