@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('karyawan', function (Blueprint $table) {
-//            $table->id();
             $table->uuid('uuid')->unique();
             $table->string('name');
             $table->string('address');
@@ -20,7 +19,6 @@ return new class extends Migration
             $table->string('email');
             $table->unsignedBigInteger('department_id');
             $table->timestamps();
-
 
             $table->foreign('department_id')->references('id')->on('department');
         });
