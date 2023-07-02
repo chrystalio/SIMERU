@@ -33,7 +33,7 @@
                                 <td>{{ $data->phone }}</td>
                                 <td>{{ $data->email }}</td>
                                 <td>{{ $data->role }}</td>
-                                <td>{{ $data->department->nama }}</td>
+                                <td>{{ $data->department->name }}</td>
                                 <td>
                                     <a href="{{ route('karyawan.edit', $data->uuid) }}" class="btn btn-warning">Edit</a>
                                     <form action="{{ route('karyawan.delete', $data->uuid) }}" method="POST" class="d-inline">

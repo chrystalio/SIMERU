@@ -47,7 +47,7 @@
                                 <option value="">Pilih Departemen</option>
                                 @foreach($departmentData as $department)
                                     <option value="{{ $department->id }}" {{ old('department_id') == $department->id ? 'selected' : '' }}>
-                                        {{ $department->nama }}
+                                        {{ $department->name }}
                                     </option>
                                 @endforeach
                             </select>

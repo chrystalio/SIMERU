@@ -13,13 +13,13 @@
                     @csrf
                     @method('put')
                         <div class="form-group">
-                            <label for="nama">Name</label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" value="{{ $department->nama }}">
-                            @error('nama')
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Department Name" value="{{ $department->name }}">
+                            @error('name')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
-                    <a href="{{ route('department.index') }}" class="btn btn-secondary mr-lg-2">Kembali</a>
+                    <a href="{{ route('department.index') }}" class="btn btn-secondary mr-lg-2">Back</a>
 
                     <button type="submit" class="btn btn-primary m-100">Update Data</button>
                 </form>
