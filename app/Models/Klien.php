@@ -13,10 +13,10 @@ class Klien extends Model
     protected $table = 'klien';
 
     protected $fillable = [
-        'nama',
+        'name',
         'email',
-        'alamat',
-        'no_telp',
+        'address',
+        'phone',
         'proyek_id',
     ];
 

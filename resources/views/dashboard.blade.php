@@ -101,9 +101,9 @@
                                     @forelse($proyekData as $finished)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $finished->nama }}</td>
-                                            <td>{{ $finished->tanggal_selesai }}</td>
-                                            <td>{{ $finished->karyawan->nama }}</td>
+                                            <td>{{ $finished->name }}</td>
+                                            <td>{{ $finished->end_date }}</td>
+                                            <td>{{ $finished->karyawan->name }}</td>
                                             <td>
                                                 @if ($finished->status === 'NOT STARTED')
                                                     <span class="badge badge-dark">NOT STARTED</span>

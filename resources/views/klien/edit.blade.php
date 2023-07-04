@@ -14,26 +14,31 @@
                     @method('put')
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="nama">Name</label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" value="{{ $klien->nama }}">
-                            @error('nama')
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ $klien->name }}">
+                            @error('name')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="alamat">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" value="{{ $klien->alamat }}">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="address" value="{{ $klien->address }}">
+                            @error('address')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email address</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="email@example.net" value="{{ $klien->email }}" aria-describedby="emailHelp">
-                        <small id="emailHelp" class="form-text text-danger">Input email dengan benar.</small>
+                        @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="no_telp">No HP</label>
-                            <input type="tel" class="form-control" id="no_telp" name="no_telp" placeholder="0877xxxxxx" value="{{ $klien->no_telp }}">
+                            <label for="phone">Phone</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="0877xxxxxx" value="{{ $klien->phone }}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="proyek_id">Project</label>
@@ -41,7 +46,7 @@
                                 <option value="">Pilih Project</option>
                                 @foreach($proyekData as $proyek)
                                     <option value="{{ $proyek->id }}" @selected($klien->proyek_id == $proyek->id)>
-                                        {{ $proyek->nama }}
+                                        {{ $proyek->name }}
                                     </option>
                                 @endforeach
                             </select>

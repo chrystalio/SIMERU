@@ -13,12 +13,12 @@ class ProyekFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama' => $this->faker->name,
-            'deskripsi' => $this->faker->text,
-            'tanggal_mulai' => $this->faker->date(),
-            'tanggal_selesai' => $this->faker->date(),
-            'kategori' => $this->faker->randomElement(['PEMERINTAH', 'SWASTA', 'LAINNYA']),
-            'karyawan_uuid' => Karyawan::factory(),
+            'name' => $this->faker->name,
+            'description' => $this->faker->text,
+            'start_date' => $this->faker->date(),
+            'end_date' => $this->faker->date(),
+            'category' => $this->faker->randomElement(['PEMERINTAH', 'SWASTA', 'LAINNYA']),
+            'karyawan_uuid' => Karyawan::inRandomOrder()->first()->uuid,
             'status' => $this->faker->randomElement(['NOT STARTED', 'PENDING', 'CANCELLED', 'ON PROGRESS','FINISHED']),
             'created_at' => $this->faker->dateTime(),
         ];

@@ -12,39 +12,39 @@
                 <form method="POST" action="{{ route('proyek.store') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="nama">Nama Project</label>
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
-                        @error('nama')
+                        <label for="name">Project Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="name" value="{{ old('name') }}">
+                        @error('name')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="deskripsi">Deskripsi Project</label>
-                        <textarea class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi"></textarea>
-                        @error('deskripsi')
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" name="description" placeholder="description">{{ old('description') }}</textarea>
+                        @error('description')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="tanggal_mulai">Tanggal Mulai</label>
-                        <input type="date" class="form-control" id="tanggal_mulai" name="tanggal_mulai" placeholder="Tanggal Mulai">
-                        @error('tanggal_mulai')
+                        <label for="start_date">Tanggal Mulai</label>
+                        <input type="date" class="form-control" id="start_date" name="start_date" placeholder="Tanggal Mulai" value="{{ old('start_date') }}">
+                        @error('start_date')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="tanggal_selesai">Tanggal Selesai</label>
-                        <input type="date" class="form-control" id="tanggal_selesai" name="tanggal_selesai" placeholder="Tanggal Selesai">
-                        @error('tanggal_selesai')
+                        <label for="end_date">Tanggal Selesai</label>
+                        <input type="date" class="form-control" id="end_date" name="end_date" placeholder="Tanggal Selesai" value="{{ old('end_date') }}">
+                        @error('end_date')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                    <label for="karyawan_id">Karyawan</label>
+                    <label for="karyawan_uuid">Karyawan</label>
                     <select class="form-control" id="karyawan_uuid" name="karyawan_uuid">
                         <option value="" selected disabled>Pilih Karyawan</option>
                         @foreach($karyawanData as $data)
-                            <option value="{{ $data->uuid }}">{{ $data->name }}</option>
+                            <option value="{{ $data->uuid }}" @selected(old('karyawan_uuid') == $data->uuid)>{{ $data->name }}</option>
                         @endforeach
                     </select>
                     @error('karyawan_uuid')
@@ -55,25 +55,25 @@
                         <label for="status">Status Project</label>
                         <select class="form-control" id="status" name="status">
                             <option selected disabled>Pilih Status</option>
-                            <option value="NOT STARTED">NOT STARTED</option>
-                            <option value="PENDING">PENDING</option>
-                            <option value="CANCELLED">CANCELLED</option>
-                            <option value="ON PROGRESS">ON PROGRESS</option>
-                            <option value="FINISHED">FINISHED</option>
+                            <option value="NOT STARTED" @selected(old('status') == 'NOT STARTED')>NOT STARTED</option>
+                            <option value="PENDING" @selected(old('status') == 'PENDING')>PENDING</option>
+                            <option value="CANCELLED" @selected(old('status') == 'CANCELLE')>CANCELLED</option>
+                            <option value="ON PROGRESS" @selected(old('status') == 'ON PROGRESS')>ON PROGRESS</option>
+                            <option value="FINISHED" @selected(old('status') == 'FINISHED')>FINISHED</option>
                         </select>
                         @error('status')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="kategori">Kategori</label>
-                        <select class="form-control" id="kategori" name="kategori">
+                        <label for="category">Category</label>
+                        <select class="form-control" id="category" name="category">
                             <option selected disabled>Pilih Status</option>
-                            <option value="PEMERINTAH">PEMERINTAH</option>
-                            <option value="SWASTA">SWASTA</option>
-                            <option value="LAINNYA">LAINNYA</option>
+                            <option value="PEMERINTAH" @selected(old('value') == 'PEMERINTAH')>PEMERINTAH</option>
+                            <option value="SWASTA" @selected(old('value') == 'SWASTA')>SWASTA</option>
+                            <option value="LAINNYA" @selected(old('value') == 'LAINNYA')>LAINNYA</option>
                         </select>
-                        @error('kategori')
+                        @error('category')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>

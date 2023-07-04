@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('laporan', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->string('deskripsi');
-            $table->date('tanggal');
+            $table->string('title');
+            $table->string('description');
+            $table->date('date');
             $table->unsignedBigInteger('proyek_id');
             $table->timestamps();
 

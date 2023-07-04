@@ -16,35 +16,35 @@
                     @method('PUT')
 
                     <div class="form-group">
-                        <label for="nama">Nama Project</label>
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" value="{{ $proyek->nama }}">
-                        @error('nama')
+                        <label for="name">Project Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="name" value="{{ $proyek->name }}">
+                        @error('name')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="deskripsi">Deskripsi Project</label>
-                        <textarea class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi">{{ $proyek->deskripsi }}</textarea>
-                        @error('deskripsi')
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" name="description" placeholder="description">{{ $proyek->description }}</textarea>
+                        @error('description')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="tanggal_mulai">Tanggal Mulai</label>
-                        <input type="date" class="form-control" id="tanggal_mulai" name="tanggal_mulai" placeholder="Tanggal Mulai" value="{{ $proyek->tanggal_mulai }}">
-                        @error('tanggal_mulai')
+                        <label for="start_date">Tanggal Mulai</label>
+                        <input type="date" class="form-control" id="start_date" name="start_date" placeholder="Tanggal Mulai" value="{{ $proyek->start_date }}">
+                        @error('start_date')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="tanggal_selesai">Tanggal Selesai</label>
-                        <input type="date" class="form-control" id="tanggal_selesai" name="tanggal_selesai" placeholder="Tanggal Selesai" value="{{ $proyek->tanggal_selesai }}">
-                        @error('tanggal_selesai')
+                        <label for="end_date">Tanggal Selesai</label>
+                        <input type="date" class="form-control" id="end_date" name="end_date" placeholder="Tanggal Selesai" value="{{ $proyek->end_date }}">
+                        @error('end_date')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="karyawan_id">Karyawan</label>
+                        <label for="karyawan_uuid">Karyawan</label>
                         <select class="form-control" id="karyawan_uuid" name="karyawan_uuid">
                             <option value="" selected disabled>Pilih Karyawan</option>
                             @foreach($karyawanData as $data)
@@ -66,16 +66,22 @@
                             <option value="CANCELLED" {{ $proyek->status == 'CANCELLED' ? 'selected' : '' }}>CANCELLED</option>
                             <option value="FINISHED" {{ $proyek->status == 'FINISHED' ? 'selected' : '' }}>FINISHED</option>
                         </select>
+                        @error('status')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
-                        <label for="kategori">Kategori</label>
-                        <select class="form-control" id="kategori" name="kategori">
+                        <label for="category">Category</label>
+                        <select class="form-control" id="category" name="category">
                             <option selected disabled>Pilih Status</option>
-                            <option value="PEMERINTAH" {{ $proyek->kategori == 'PEMERINTAH' ? 'selected' : '' }}>PEMERINTAH</option>
-                            <option value="SWASTA" {{ $proyek->kategori == 'SWASTA' ? 'selected' : '' }}>SWASTA</option>
-                            <option value="LAINNYA" {{ $proyek->kategori == 'LAINNYA' ? 'selected' : '' }}>LAINNYA</option>
+                            <option value="PEMERINTAH" {{ $proyek->category == 'PEMERINTAH' ? 'selected' : '' }}>PEMERINTAH</option>
+                            <option value="SWASTA" {{ $proyek->category == 'SWASTA' ? 'selected' : '' }}>SWASTA</option>
+                            <option value="LAINNYA" {{ $proyek->category == 'LAINNYA' ? 'selected' : '' }}>LAINNYA</option>
                         </select>
+                        @error('category')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <a href="{{ route('proyek.index') }}" class="btn btn-secondary mr-lg-2">Kembali</a>

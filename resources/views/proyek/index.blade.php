@@ -29,12 +29,12 @@
                         @foreach($proyekData as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $data->nama }}</td>
-                                <td>{{ $data->deskripsi }}</td>
-                                <td>{{ $data->tanggal_mulai }}</td>
-                                <td>{{ $data->tanggal_selesai }}</td>
+                                <td>{{ $data->name }}</td>
+                                <td>{{ $data->description }}</td>
+                                <td>{{ $data->start_date }}</td>
+                                <td>{{ $data->end_date }}</td>
                                 <td>{{ $data->karyawan->name }}</td>
-                                <td>{{ $data->kategori }}</td>
+                                <td>{{ $data->category }}</td>
                                 <td>
                                     @if ($data->status === 'NOT STARTED')
                                         <span class="badge badge-dark">NOT STARTED</span>

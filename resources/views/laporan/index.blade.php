@@ -28,10 +28,10 @@
                         @foreach($laporanData as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $data->judul }}</td>
-                                <td>{{ $data->deskripsi }}</td>
-                                <td>{{ $data->tanggal }}</td>
-                                <td>{{ $data->project->nama }}</td>
+                                <td>{{ $data->title }}</td>
+                                <td>{{ $data->description }}</td>
+                                <td>{{ $data->date }}</td>
+                                <td>{{ $data->project->name }}</td>
                                 <td>
                                     <a href="{{ route('laporan.edit', $data->id) }}" class="btn btn-warning">Edit</a>
                                     <form action="{{ route('laporan.delete', $data->id) }}" method="POST" class="d-inline">

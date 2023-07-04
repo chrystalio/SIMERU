@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Karyawan;
 use App\Models\Proyek;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
 class DashboardController extends Controller
@@ -15,17 +16,17 @@ class DashboardController extends Controller
         $karyawanCount = Karyawan::count();
         $proyekData = Proyek::with('karyawan')->latest('updated_at')->take(5)->get();
 
-        $karyawanRolePercentage = Karyawan::select('role', \DB::raw('count(*) as total'))
+        $karyawanRolePercentage = Karyawan::select('role', DB::raw('count(*) as total'))
             ->groupBy('role')
             ->get();
 
-        $projectStatusPercentage = Proyek::select('status', \DB::raw('count(*) as total'))
+        $projectStatusPercentage = Proyek::select('status', DB::raw('count(*) as total'))
             ->groupBy('status')
             ->get();
 
-        $projectCategoryPercentage = Proyek::select(\DB::raw('MONTH(tanggal_selesai) as month'), 'kategori', \DB::raw('count(*) as total'))
+        $projectCategoryPercentage = Proyek::select(DB::raw('MONTH(end_date) as month'), 'category', DB::raw('count(*) as total'))
             ->where('status', 'FINISHED')
-            ->groupBy('month', 'kategori')
+            ->groupBy('month', 'category')
             ->get();
 
 

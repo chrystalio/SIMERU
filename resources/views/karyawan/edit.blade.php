@@ -14,41 +14,55 @@
                     @method('put')
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="nama">Name</label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" value="{{ $karyawan->nama }}">
-                            @error('nama')
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="nama" name="name" placeholder="Name" value="{{ $karyawan->name }}">
+                            @error('name')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="alamat">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" value="{{ $karyawan->alamat }}">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="address" value="{{ $karyawan->address }}">
+                            @error('address')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="email">Email address</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="email@example.net" value="{{ $karyawan->email }}" aria-describedby="emailHelp">
-                            <small id="emailHelp" class="form-text text-danger">Input email dengan benar.</small>
+                            @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="role">Jabatan</label>
+                            <label for="role">Role</label>
                             <input type="text" class="form-control" id="role" name="role" value="{{ $karyawan->role }}">
+                            @error('role')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="no_telp">No HP</label>
-                            <input type="tel" class="form-control" id="no_telp" name="no_telp" placeholder="0877xxxxxx" value="{{ $karyawan->no_telp }}">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="0877xxxxxx" value="{{ $karyawan->phone }}">
+                            @error('phone')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group col-md-6">
                             <label for="department_id">Departemen</label>
                             <select name="department_id" id="department_id" class="form-control">
                                 <option value="">Pilih Departemen</option>
                                 @foreach($departmentData as $department)
-                                    <option value="{{ $department->id }}" {{ $department->id == $karyawan->department_id ? 'selected' : '' }}>{{ $department->name }}</option>
+                                    <option value="{{ $department->id }}" @selected($department->id == $karyawan->department_id)>{{ $department->name }}</option>
                                 @endforeach
                             </select>
+                            @error('department_id')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <a href="{{ route('karyawan.index') }}" class="btn btn-secondary mr-lg-2">Kembali</a>

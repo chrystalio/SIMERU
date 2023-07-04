@@ -23,11 +23,11 @@ class StoreProyekRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nama' => 'required|string|max:255',
-            'deskripsi' => 'required|string|max:255',
-            'tanggal_mulai' => 'required|date',
-            'tanggal_selesai' => 'required|date',
-            'kategori' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
+            'category' => 'required|string|max:255',
             'karyawan_uuid' => 'required|string|exists:karyawan,uuid',
             'status' => 'required|string|max:255'
         ];

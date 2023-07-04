@@ -18,9 +18,9 @@ class LaporanFactory extends Factory
     public function definition(): array
     {
         return [
-            'judul' => $this->faker->name,
-            'deskripsi' => $this->faker->text,
-            'tanggal' => $this->faker->date(),
+            'title' => $this->faker->name,
+            'description' => $this->faker->text,
+            'date' => $this->faker->date(),
             'proyek_id' => Proyek::factory()
         ];
     }

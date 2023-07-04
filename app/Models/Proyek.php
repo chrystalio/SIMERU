@@ -18,11 +18,11 @@ class Proyek extends Model
     ];
 
     protected $fillable = [
-        'nama',
-        'deskripsi',
-        'tanggal_mulai',
-        'tanggal_selesai',
-        'kategori',
+        'name',
+        'description',
+        'start_date',
+        'end_date',
+        'category',
         'karyawan_uuid',
         'status'
     ];

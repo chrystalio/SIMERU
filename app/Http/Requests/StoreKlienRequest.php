@@ -23,10 +23,10 @@ class StoreKlienRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nama' => 'required|string',
+            'name' => 'required|string',
             'email' => 'required|email',
-            'alamat' => 'required|string',
-            'no_telp' => 'required|string',
+            'address' => 'required|string',
+            'phone' => 'required|string',
             'proyek_id' => 'required|int|exists:proyek,id',
         ];
     }

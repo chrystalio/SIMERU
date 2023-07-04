@@ -27,11 +27,11 @@
                         @foreach($kliensData as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $data->nama }}</td>
-                                <td>{{ $data->alamat }}</td>
-                                <td>{{ $data->no_telp }}</td>
+                                <td>{{ $data->name }}</td>
+                                <td>{{ $data->address }}</td>
+                                <td>{{ $data->phone }}</td>
                                 <td>{{ $data->email }}</td>
-                                <td>{{ $data->proyek->nama }}</td>
+                                <td>{{ $data->proyek->name }}</td>
                                 <td>
                                     <a href="{{ route('klien.edit', $data->id) }}" class="btn btn-warning">Edit</a>
                                     <form action="{{ route('klien.delete', $data->id) }}" method="POST" class="d-inline">

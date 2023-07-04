@@ -23,9 +23,9 @@ class StoreLaporanRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'judul' => 'required|string',
-            'deskripsi' => 'required|string',
-            'tanggal' => 'required|date',
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'date' => 'required|date',
             'proyek_id' => 'required|exists:proyek,id',
         ];
     }

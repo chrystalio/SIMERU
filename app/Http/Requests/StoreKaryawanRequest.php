@@ -23,9 +23,9 @@ class StoreKaryawanRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nama' => 'required|string|max:255',
-            'alamat' => 'required|string|max:255',
-            'no_telp' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'phone' => 'required|string|max:255',
             'email' => 'required|email',
             'role' => 'required|string|max:255',
             'department_id' => 'required|int|exists:department,id'
