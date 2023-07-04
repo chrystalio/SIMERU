@@ -56,11 +56,11 @@
                 const monthData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // Initialize array with zeros
                 const month = data.month - 1; // Adjust month to match the array index
                 monthData[month] = data.total; // Set the total for the corresponding month
-                const existingSeries = seriesArray.find(series => series.name === data.kategori);
+                const existingSeries = seriesArray.find(series => series.name === data.category);
                 if (existingSeries) {
                     existingSeries.data = monthData; // Update existing series data
                 } else {
-                    seriesArray.push({ name: data.kategori, data: monthData }); // Add new series
+                    seriesArray.push({ name: data.category, data: monthData }); // Add new series
                 }
                 return seriesArray;
             }, [])
