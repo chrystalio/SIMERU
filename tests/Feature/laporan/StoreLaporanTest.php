@@ -68,23 +68,23 @@ class StoreLaporanTest extends TestCase
     public static function DataStoreValidation(): array
     {
         return [
-            'field judul is required' => [
-                'judul', '', 'The judul field is required.'
+            'field title is required' => [
+                'title', '', 'The title field is required.'
             ],
-            'field judul must be string' => [
-                'judul', 123, 'The judul field must be a string.'
+            'field title must be string' => [
+                'title', 123, 'The title field must be a string.'
             ],
-            'field deskripsi is required' => [
-                'deskripsi', '', 'The deskripsi field is required.'
+            'field description is required' => [
+                'description', '', 'The description field is required.'
             ],
-            'field deskripsi must be string' => [
-                'deskripsi', 123, 'The deskripsi field must be a string.'
+            'field description must be string' => [
+                'description', 123, 'The description field must be a string.'
             ],
-            'field tanggal is required' => [
-                'tanggal', '', 'The tanggal field is required.'
+            'field date is required' => [
+                'date', '', 'The date field is required.'
             ],
-            'field tanggal must be date' => [
-                'tanggal', 'abc', 'The tanggal field must be a valid date.'
+            'field date must be date' => [
+                'date', 'abc', 'The date field must be a valid date.'
             ],
             'field proyek_id is required' => [
                 'proyek_id', '', 'The proyek id field is required.'

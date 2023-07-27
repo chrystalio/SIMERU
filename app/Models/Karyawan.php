@@ -30,6 +30,11 @@ class Karyawan extends Model
         'department_id',
     ];
 
+    public function getRouteKeyName()
+    {
+        return 'uuid';
+    }
+
     public function department(): BelongsTo
     {
         return $this->belongsTo(Department::class);

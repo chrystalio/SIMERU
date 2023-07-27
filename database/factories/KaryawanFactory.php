@@ -24,7 +24,17 @@ class KaryawanFactory extends Factory
             'phone' => $this->faker->phoneNumber,
             'email' => $this->faker->email,
             'role' => 'Staff', // add this line
-            'department_id' => Department::inRandomOrder()->first()->id,
+            'department_id' => app()->environment('testing') ? Department::factory() : Department::inRandomOrder()->first()->id,
         ];
+    }
+
+    public function uuid(): Factory
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'uuid' => Str::uuid(),
+            ];
+        });
+
     }
 }

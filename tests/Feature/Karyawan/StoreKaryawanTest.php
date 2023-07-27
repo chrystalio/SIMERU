@@ -37,13 +37,13 @@ class StoreKaryawanTest extends TestCase
 
     public function test_store_karyawan_if_user_authenticated(): void
     {
-        $user = User::factory()->create();
-        $this->actingAs($user);
+        $this->actingAs($user = User::factory()->create());
 
         $request = Karyawan::factory()->make()->toArray();
         $response = $this->post(route('karyawan.store'), $request);
         $response->assertRedirect(route('karyawan.index'));
         $response->assertSessionHas('success', 'Karyawan Created Successfully!');
+
         $this->assertDatabaseHas('karyawan', $request);
     }
 
@@ -66,32 +66,32 @@ class StoreKaryawanTest extends TestCase
     public static function DataStoreValidation(): array
     {
         return [
-            'field nama is required' => [
-                'nama','', 'The nama field is required.'
+            'field name is required' => [
+                'name','', 'The name field is required.'
             ],
-            'field nama must string' => [
-                'nama', 1, 'The nama field must be a string.'
+            'field name must string' => [
+                'name', 1, 'The name field must be a string.'
             ],
-            'field nama max 255' => [
-                'nama', str_repeat('a', 256), 'The nama field must not be greater than 255 characters.'
+            'field name max 255' => [
+                'name', str_repeat('a', 256), 'The name field must not be greater than 255 characters.'
             ],
-            'field alamat is required' => [
-                'alamat','', 'The alamat field is required.'
+            'field address is required' => [
+                'address','', 'The address field is required.'
             ],
-            'field alamat must string' => [
-                'alamat', 1, 'The alamat field must be a string.'
+            'field address must string' => [
+                'address', 1, 'The address field must be a string.'
             ],
-            'field alamat max 255' => [
-                'alamat', str_repeat('a', 256), 'The alamat field must not be greater than 255 characters.'
+            'field address max 255' => [
+                'address', str_repeat('a', 256), 'The address field must not be greater than 255 characters.'
             ],
-            'field no_telp is required' => [
-                'no_telp','', 'The no telp field is required.'
+            'field phone is required' => [
+                'phone','', 'The phone field is required.'
             ],
-            'field no_telp must string' => [
-                'no_telp', 1, 'The no telp field must be a string.'
+            'field phone must string' => [
+                'phone', 1, 'The phone field must be a string.'
             ],
-            'field no_telp max 255' => [
-                'no_telp', str_repeat('a', 256), 'The no telp field must not be greater than 255 characters.'
+            'field phone max 255' => [
+                'phone', str_repeat('a', 256), 'The phone field must not be greater than 255 characters.'
             ],
             'field email is required' => [
                 'email','', 'The email field is required.'
