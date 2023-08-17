@@ -3,8 +3,6 @@
 namespace Tests\Feature\laporan;
 
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class IndexLaporanTest extends TestCase

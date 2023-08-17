@@ -13,12 +13,14 @@ class KaryawanController extends Controller
     public function index(): View
     {
         $karyawanData = Karyawan::all();
+
         return view('karyawan.index', compact('karyawanData'));
     }
 
     public function create(): view
     {
         $departmentData = Department::all();
+
         return view('karyawan.create', compact('departmentData'));
     }
 
@@ -32,9 +34,9 @@ class KaryawanController extends Controller
     public function edit(Karyawan $karyawan): View
     {
         $departmentData = Department::all();
+
         return view('karyawan.edit', compact('karyawan', 'departmentData'));
     }
-
 
     public function update(StoreKaryawanRequest $request, Karyawan $karyawan): RedirectResponse
     {

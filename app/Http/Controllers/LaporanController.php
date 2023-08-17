@@ -20,6 +20,7 @@ class LaporanController extends Controller
     public function create(): View
     {
         $proyekData = Proyek::all();
+
         return view('laporan.create', compact('proyekData'));
     }
 
@@ -33,6 +34,7 @@ class LaporanController extends Controller
     public function edit(Laporan $laporan): View
     {
         $proyekData = Proyek::all();
+
         return view('laporan.edit', compact('laporan', 'proyekData'));
     }
 

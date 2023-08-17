@@ -12,8 +12,11 @@ class Karyawan extends Model
     use HasFactory, HasUuids;
 
     protected $table = 'karyawan';
+
     protected $primaryKey = 'uuid';
+
     public $incrementing = false;
+
     protected $keyType = 'string';
 
     protected $casts = [

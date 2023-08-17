@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreDepartmentRequest;
-use App\Http\Requests\UpdateDepartmentRequest;
 use App\Models\Department;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -48,4 +47,3 @@ class DepartmentController extends Controller
         return redirect()->route('department.index')->with('success', 'Department deleted successfully.');
     }
 }
-

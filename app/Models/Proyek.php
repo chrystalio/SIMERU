@@ -14,7 +14,7 @@ class Proyek extends Model
 
     protected array $dates = [
         'tanggal_mulai',
-        'tanggal_selesai'
+        'tanggal_selesai',
     ];
 
     protected $fillable = [
@@ -24,7 +24,7 @@ class Proyek extends Model
         'end_date',
         'category',
         'karyawan_uuid',
-        'status'
+        'status',
     ];
 
     public function karyawan(): BelongsTo

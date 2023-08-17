@@ -6,7 +6,6 @@ use App\Http\Requests\StoreProyekRequest;
 use App\Models\Karyawan;
 use App\Models\Proyek;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class ProyekController extends Controller
@@ -21,6 +20,7 @@ class ProyekController extends Controller
     public function create(): View
     {
         $karyawanData = Karyawan::all();
+
         return view('proyek.create', compact('karyawanData'));
     }
 
@@ -34,6 +34,7 @@ class ProyekController extends Controller
     public function edit(Proyek $proyek): View
     {
         $karyawanData = Karyawan::all();
+
         return view('proyek.edit', compact('proyek', 'karyawanData'));
     }
 

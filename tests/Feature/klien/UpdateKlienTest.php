@@ -4,8 +4,6 @@ namespace Tests\Feature\klien;
 
 use App\Models\Klien;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class UpdateKlienTest extends TestCase
@@ -54,7 +52,7 @@ class UpdateKlienTest extends TestCase
     /**
      * @dataProvider DataStoreValidation
      */
-    public function test_validation_request(string $field, string|int $value,string $errorMessage): void
+    public function test_validation_request(string $field, string|int $value, string $errorMessage): void
     {
         $user = User::factory()->create();
 

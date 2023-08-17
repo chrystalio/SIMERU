@@ -25,4 +25,3 @@ class Klien extends Model
         return $this->belongsTo(Proyek::class);
     }
 }
-

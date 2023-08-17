@@ -4,8 +4,6 @@ namespace Tests\Feature\karyawan;
 
 use App\Models\Karyawan;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class DeleteKaryawanTest extends TestCase

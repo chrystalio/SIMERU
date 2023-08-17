@@ -2,11 +2,8 @@
 
 namespace Tests\Feature\laporan;
 
-use App\Models\Karyawan;
 use App\Models\Laporan;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class StoreLaporanTest extends TestCase
@@ -52,7 +49,7 @@ class StoreLaporanTest extends TestCase
     /**
      * @dataProvider DataStoreValidation
      */
-    public function test_validation_request(string $field, string|int $value,string $errorMessage): void
+    public function test_validation_request(string $field, string|int $value, string $errorMessage): void
     {
         $user = User::factory()->create();
 
@@ -69,30 +66,29 @@ class StoreLaporanTest extends TestCase
     {
         return [
             'field title is required' => [
-                'title', '', 'The title field is required.'
+                'title', '', 'The title field is required.',
             ],
             'field title must be string' => [
-                'title', 123, 'The title field must be a string.'
+                'title', 123, 'The title field must be a string.',
             ],
             'field description is required' => [
-                'description', '', 'The description field is required.'
+                'description', '', 'The description field is required.',
             ],
             'field description must be string' => [
-                'description', 123, 'The description field must be a string.'
+                'description', 123, 'The description field must be a string.',
             ],
             'field date is required' => [
-                'date', '', 'The date field is required.'
+                'date', '', 'The date field is required.',
             ],
             'field date must be date' => [
-                'date', 'abc', 'The date field must be a valid date.'
+                'date', 'abc', 'The date field must be a valid date.',
             ],
             'field proyek_id is required' => [
-                'proyek_id', '', 'The proyek id field is required.'
+                'proyek_id', '', 'The proyek id field is required.',
             ],
             'field proyek_id must be exists' => [
-                'proyek_id', 999999999, 'The selected proyek id is invalid.'
+                'proyek_id', 999999999, 'The selected proyek id is invalid.',
             ],
         ];
     }
-
 }

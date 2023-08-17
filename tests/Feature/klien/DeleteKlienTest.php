@@ -4,8 +4,6 @@ namespace Tests\Feature\klien;
 
 use App\Models\Klien;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class DeleteKlienTest extends TestCase

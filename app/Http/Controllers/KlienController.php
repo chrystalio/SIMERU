@@ -6,7 +6,6 @@ use App\Http\Requests\StoreKlienRequest;
 use App\Models\Klien;
 use App\Models\Proyek;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class KlienController extends Controller
@@ -14,12 +13,14 @@ class KlienController extends Controller
     public function index(): View
     {
         $kliensData = Klien::all();
+
         return view('klien.index', compact('kliensData'));
     }
 
     public function create(): View
     {
         $proyekData = Proyek::all();
+
         return view('klien.create', compact('proyekData'));
     }
 
@@ -33,6 +34,7 @@ class KlienController extends Controller
     public function edit(Klien $klien): View
     {
         $proyekData = Proyek::all();
+
         return view('klien.edit', compact('klien', 'proyekData'));
     }
 

@@ -14,8 +14,7 @@ class StoreDepartmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255|unique:department,name,' . $this->id,
+            'name' => 'required|string|max:255|unique:department,name,'.$this->id,
         ];
     }
 }
-

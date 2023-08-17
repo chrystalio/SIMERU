@@ -28,7 +28,7 @@ class StoreKaryawanRequest extends FormRequest
             'phone' => 'required|string|max:255',
             'email' => 'required|email',
             'role' => 'required|string|max:255',
-            'department_id' => 'required|int|exists:department,id'
+            'department_id' => 'required|int|exists:department,id',
         ];
     }
 }

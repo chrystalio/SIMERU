@@ -3,10 +3,7 @@
 namespace Tests\Feature\klien;
 
 use App\Models\Klien;
-use App\Models\Laporan;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class StoreKlienTest extends TestCase
@@ -52,7 +49,7 @@ class StoreKlienTest extends TestCase
     /**
      * @dataProvider DataStoreValidation
      */
-    public function test_validation_request(string $field, string|int $value,string $errorMessage): void
+    public function test_validation_request(string $field, string|int $value, string $errorMessage): void
     {
         $user = User::factory()->create();
 

@@ -19,7 +19,7 @@ class ProyekFactory extends Factory
             'end_date' => $this->faker->date(),
             'category' => $this->faker->randomElement(['PEMERINTAH', 'SWASTA', 'LAINNYA']),
             'karyawan_uuid' => app()->environment('testing') ? Karyawan::factory() : Karyawan::inRandomOrder()->first()->uuid,
-            'status' => $this->faker->randomElement(['NOT STARTED', 'PENDING', 'CANCELLED', 'ON PROGRESS','FINISHED']),
+            'status' => $this->faker->randomElement(['NOT STARTED', 'PENDING', 'CANCELLED', 'ON PROGRESS', 'FINISHED']),
             'created_at' => $this->faker->dateTime(),
         ];
     }

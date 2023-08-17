@@ -1,12 +1,10 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\KlienController;
 use App\Http\Controllers\LaporanController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProyekController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::middleware('auth')->group(function () {
-    Route::get('/', fn() => redirect()->route('dashboard'));
+    Route::get('/', fn () => redirect()->route('dashboard'));
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
     Route::prefix('/dashboard')->group(function () {
@@ -80,6 +77,5 @@ Route::middleware('auth')->group(function () {
         });
     });
 });
-
 
 require __DIR__.'/auth.php';

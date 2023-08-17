@@ -4,8 +4,6 @@ namespace Tests\Feature\laporan;
 
 use App\Models\Laporan;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class DeleteLaporanTest extends TestCase
@@ -21,7 +19,7 @@ class DeleteLaporanTest extends TestCase
 
     public function test_can_delete_laporan_if_authenticated(): void
     {
-        $user  = User::factory()->create();
+        $user = User::factory()->create();
         $laporan = Laporan::factory()->create();
         $response = $this->actingAs($user)->delete(route('laporan.delete', $laporan));
 

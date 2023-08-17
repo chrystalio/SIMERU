@@ -21,7 +21,7 @@ class LaporanFactory extends Factory
             'title' => $this->faker->name,
             'description' => $this->faker->text,
             'date' => $this->faker->date(),
-            'proyek_id' => Proyek::factory()
+            'proyek_id' => Proyek::factory(),
         ];
     }
 }

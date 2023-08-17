@@ -4,8 +4,6 @@ namespace Tests\Feature\Karyawan;
 
 use App\Models\Karyawan;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class StoreKaryawanTest extends TestCase
@@ -50,7 +48,7 @@ class StoreKaryawanTest extends TestCase
     /**
      * @dataProvider DataStoreValidation
      */
-    public function test_validation_request(string $field, string|int $value,string $errorMessage): void
+    public function test_validation_request(string $field, string|int $value, string $errorMessage): void
     {
         $user = User::factory()->create();
 
@@ -67,46 +65,46 @@ class StoreKaryawanTest extends TestCase
     {
         return [
             'field name is required' => [
-                'name','', 'The name field is required.'
+                'name', '', 'The name field is required.',
             ],
             'field name must string' => [
-                'name', 1, 'The name field must be a string.'
+                'name', 1, 'The name field must be a string.',
             ],
             'field name max 255' => [
-                'name', str_repeat('a', 256), 'The name field must not be greater than 255 characters.'
+                'name', str_repeat('a', 256), 'The name field must not be greater than 255 characters.',
             ],
             'field address is required' => [
-                'address','', 'The address field is required.'
+                'address', '', 'The address field is required.',
             ],
             'field address must string' => [
-                'address', 1, 'The address field must be a string.'
+                'address', 1, 'The address field must be a string.',
             ],
             'field address max 255' => [
-                'address', str_repeat('a', 256), 'The address field must not be greater than 255 characters.'
+                'address', str_repeat('a', 256), 'The address field must not be greater than 255 characters.',
             ],
             'field phone is required' => [
-                'phone','', 'The phone field is required.'
+                'phone', '', 'The phone field is required.',
             ],
             'field phone must string' => [
-                'phone', 1, 'The phone field must be a string.'
+                'phone', 1, 'The phone field must be a string.',
             ],
             'field phone max 255' => [
-                'phone', str_repeat('a', 256), 'The phone field must not be greater than 255 characters.'
+                'phone', str_repeat('a', 256), 'The phone field must not be greater than 255 characters.',
             ],
             'field email is required' => [
-                'email','', 'The email field is required.'
+                'email', '', 'The email field is required.',
             ],
             'field email must email' => [
-                'email', 'email', 'The email field must be a valid email address.'
+                'email', 'email', 'The email field must be a valid email address.',
             ],
             'field department_id is required' => [
-                'department_id','', 'The department id field is required.'
+                'department_id', '', 'The department id field is required.',
             ],
             'field department_id must int' => [
-                'department_id', 'string', 'The department id field must be an integer.'
+                'department_id', 'string', 'The department id field must be an integer.',
             ],
             'field department_id must exists' => [
-                'department_id', 99999999, 'The selected department id is invalid.'
+                'department_id', 99999999, 'The selected department id is invalid.',
             ],
         ];
     }

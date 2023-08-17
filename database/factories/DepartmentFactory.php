@@ -29,7 +29,7 @@ class DepartmentFactory extends Factory
             'Legal',
             'Services',
             'Support',
-            'Training', 
+            'Training',
             'Product Management',
             'Engineering',
             'Business Development',
@@ -41,7 +41,7 @@ class DepartmentFactory extends Factory
         ];
 
         return [
-            'name' => $this->faker->unique()->randomElement($department)
+            'name' => $this->faker->unique()->randomElement($department),
         ];
     }
 }

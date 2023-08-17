@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Karyawan;
 use App\Models\Proyek;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
@@ -29,9 +27,6 @@ class DashboardController extends Controller
             ->groupBy('month', 'category')
             ->get();
 
-
-
         return view('dashboard', compact('proyekCount', 'karyawanCount', 'proyekData', 'karyawanRolePercentage', 'projectStatusPercentage', 'projectCategoryPercentage'));
     }
 }
-

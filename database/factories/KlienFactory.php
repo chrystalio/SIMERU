@@ -22,7 +22,7 @@ class KlienFactory extends Factory
             'email' => $this->faker->companyEmail,
             'address' => $this->faker->address,
             'phone' => $this->faker->phoneNumber,
-            'proyek_id' => Proyek::factory()
+            'proyek_id' => Proyek::factory(),
         ];
     }
 }
