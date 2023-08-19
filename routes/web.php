@@ -77,7 +77,7 @@ Route::middleware('auth')->group(function () {
             Route::delete('/{klien}', [KlienController::class, 'delete'])->name('klien.delete');
         });
 
-        Route::prefix('/user')->group(function (){
+        Route::prefix('/user')->group(function () {
             Route::get('/', [UserController::class, 'index'])->name('user.index');
         });
     });
