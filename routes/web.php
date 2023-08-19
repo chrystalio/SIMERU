@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\KaryawanController;
@@ -74,6 +75,10 @@ Route::middleware('auth')->group(function () {
             Route::get('/{klien}/edit', [KlienController::class, 'edit'])->name('klien.edit');
             Route::put('/{klien}', [KlienController::class, 'update'])->name('klien.update');
             Route::delete('/{klien}', [KlienController::class, 'delete'])->name('klien.delete');
+        });
+
+        Route::prefix('/user')->group(function (){
+            Route::get('/', [UserController::class, 'index'])->name('user.index');
         });
     });
 });
