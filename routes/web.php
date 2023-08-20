@@ -77,8 +77,10 @@ Route::middleware('auth')->group(function () {
             Route::delete('/{klien}', [KlienController::class, 'delete'])->name('klien.delete');
         });
 
-        Route::prefix('/user')->group(function () {
+        // User routes
+        Route::middleware('isAdmin')->prefix('/user')->group(function () {
             Route::get('/', [UserController::class, 'index'])->name('user.index');
+            Route::get('/reset-password/{id}', [UserController::class, 'forceResetPassword'])->name('user.reset-password');
         });
     });
 });
