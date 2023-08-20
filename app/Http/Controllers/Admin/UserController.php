@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 
 class UserController extends Controller
 {
@@ -14,7 +15,7 @@ class UserController extends Controller
         return view('admin.users.index', compact('users'));
     }
 
-    public function forceResetPassword($id)
+    public function forceResetPassword($id): RedirectResponse
     {
         $user = User::find($id);
 
