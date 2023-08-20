@@ -15,6 +15,7 @@
                         <tr>
                             <th>No</th>
                             <th>Name</th>
+                            <th>Username</th>
                             <th>Email</th>
                             <th>Role</th>
                             <th>Action</th>
@@ -25,10 +26,11 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $user->name }}</td>
+                                <td>{{ $user->username }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td class="text-capitalize">{{ $user->role()->first()->name }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-danger">
+                                    <a href="{{ route('user.reset-password', ['id' => $user->id]) }}" class="btn btn-danger">
                                         <i class="fa fa-key"></i>
                                     </a>
                                 </td>
