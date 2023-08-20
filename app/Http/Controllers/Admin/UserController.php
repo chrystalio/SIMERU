@@ -13,4 +13,17 @@ class UserController extends Controller
 
         return view('admin.users.index', compact('users'));
     }
+
+    public function forceResetPassword($id)
+    {
+        $user = User::find($id);
+
+        if ($user) {
+            $user->update(['password' => bcrypt('123456')]);
+            return redirect()->back()->with('success', 'Password reset successfully');
+        }
+
+        return redirect()->back()->with('error', 'User not found');
+    }
+
 }
