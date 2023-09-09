@@ -12,7 +12,8 @@
             <li class="{{ request()->routeIs('department.index') ? 'active' : ' ' }}"><a class="nav-link" href="{{ url('/dashboard/department') }}"><i class="fas fa-building"></i> <span>Department</span></a></li>
             <li class="{{ request()->routeIs('proyek.index') ? 'active' : ' ' }}"><a class="nav-link" href="{{ url('/dashboard/proyek') }}"><i class="fas fa-folder"></i> <span>Projects</span></a></li>
             <li class="{{ request()->routeIs('laporan.index') ? 'active' : ' ' }}"><a class="nav-link" href="{{ url('/dashboard/laporan') }}"><i class="fas fa-paper-plane"></i> <span>Laporan</span></a></li>
-            <li class="{{ request()->routeIs('klien.index') ? 'active' : ' ' }}"><a class="nav-link" href="{{ url('/dashboard/klien') }}"><i class="fas fa-circle-user"></i> <span>Klien</span></a></li> @if(auth()->user()->role()->first()->name === 'System Administrator')
+            <li class="{{ request()->routeIs('klien.index') ? 'active' : ' ' }}"><a class="nav-link" href="{{ url('/dashboard/klien') }}"><i class="fas fa-circle-user"></i> <span>Klien</span></a></li>
+            @if(auth()->user()->role()->first()->name === 'System Administrator')
                 <li class="{{ request()->routeIs('user.index') ? 'active' : ' ' }}"><a class="nav-link" href="{{ url('/dashboard/user') }}"><i class="fas fa-users"></i> <span>Users</span></a></li>
             @endif
             <li class="dropdown">
