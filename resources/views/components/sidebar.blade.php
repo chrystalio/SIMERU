@@ -15,18 +15,23 @@
             <li class="{{ request()->routeIs('klien.index') ? 'active' : ' ' }}"><a class="nav-link" href="{{ url('/dashboard/klien') }}"><i class="fas fa-circle-user"></i> <span>Klien</span></a></li>
             @if(auth()->user()->role()->first()->name === 'System Administrator')
                 <li class="{{ request()->routeIs('user.index') ? 'active' : ' ' }}"><a class="nav-link" href="{{ url('/dashboard/user') }}"><i class="fas fa-users"></i> <span>Users</span></a></li>
-            @endif
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown">
                     <i class="fas fa-wrench"></i><span>Settings</span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{url('/log-viewer')}}">
+                    <li>
+                        <a class="nav-link" href="{{url('/log-viewer')}}">
                             <i class="fas fa-terminal"></i> <span>Application Logs</span>
+                        </a>
+                        <a class="nav-link" href="{{url('/log-viewer')}}">
+                            <i class="fas fa-users-gear"></i> <span>Roles</span>
                         </a>
                     </li>
                 </ul>
             </li>
+            @endif
+
         </ul>
     </aside>
 </div>
