@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
@@ -81,6 +82,9 @@ Route::middleware('auth')->group(function () {
         Route::middleware('isAdmin')->prefix('/user')->group(function () {
             Route::get('/', [UserController::class, 'index'])->name('user.index');
             Route::get('/reset-password/{id}', [UserController::class, 'forceResetPassword'])->name('user.reset-password');
+
+            // Role routes
+            Route::resource('roles', RoleController::class);
         });
     });
 });
