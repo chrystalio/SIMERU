@@ -24,7 +24,7 @@
                         <a class="nav-link" href="{{url('/log-viewer')}}">
                             <i class="fas fa-terminal"></i> <span>Application Logs</span>
                         </a>
-                        <a class="nav-link" href="{{url('/log-viewer')}}">
+                        <a class="nav-link" href="{{ route('roles.index') }}">
                             <i class="fas fa-users-gear"></i> <span>Roles</span>
                         </a>
                     </li>
