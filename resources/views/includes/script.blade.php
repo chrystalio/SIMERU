@@ -18,6 +18,7 @@
     let projectTable = new DataTable('#projectTable')
     let laporanTable = new DataTable('#laporanTable')
     let klienTable = new DataTable('#klienTable')
+    let roleTable = new DataTable('#roleTable')
 </script>
 
 <!-- Template JS File -->
