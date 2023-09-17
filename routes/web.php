@@ -82,7 +82,7 @@ Route::middleware('auth')->group(function () {
         Route::middleware('isAdmin')->prefix('/user')->group(function () {
             Route::get('/', [UserController::class, 'index'])->name('user.index');
             Route::get('/reset-password/{id}', [UserController::class, 'forceResetPassword'])->name('user.reset-password');
-
+            Route::get('/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
             // Role routes
             Route::resource('roles', RoleController::class);
         });
