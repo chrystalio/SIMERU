@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 
@@ -14,6 +15,17 @@ class UserController extends Controller
 
         return view('admin.users.index', compact('users'));
     }
+
+    public function edit(User $user)
+    {
+        $roles = Role::all();
+
+        return view('admin.users.edit', [
+            'user' => $user,
+            'roles' => $roles,
+        ]);
+    }
+
 
     public function forceResetPassword($id): RedirectResponse
     {
