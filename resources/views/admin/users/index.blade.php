@@ -9,7 +9,7 @@
         </div>
         <div class="section-body">
             <div class="card-body bg-white my-2 rounded">
-                <div class="">
+                <div class="table-responsive-md">
                     <table class="table table-md table-hover table-bordered" id="departmentTable">
                         <thead>
                         <tr>
