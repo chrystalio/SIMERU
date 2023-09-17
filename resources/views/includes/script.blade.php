@@ -13,13 +13,26 @@
 
 <!-- Page Specific JS File -->
 <script>
-    let karyawanTable = new DataTable('#karyawanTable')
-    let departmentTable = new DataTable('#departmentTable')
-    let projectTable = new DataTable('#projectTable')
-    let laporanTable = new DataTable('#laporanTable')
-    let klienTable = new DataTable('#klienTable')
-    let roleTable = new DataTable('#roleTable')
+    let karyawanTable = new DataTable('#karyawanTable', {
+        responsive: true
+    });
+    let departmentTable = new DataTable('#departmentTable', {
+        responsive: true
+    });
+    let projectTable = new DataTable('#projectTable', {
+        responsive: true
+    });
+    let laporanTable = new DataTable('#laporanTable', {
+        responsive: true
+    });
+    let klienTable = new DataTable('#klienTable', {
+        responsive: true
+    });
+    let roleTable = new DataTable('#roleTable', {
+        responsive: true
+    });
 </script>
+
 
 <!-- Template JS File -->
 <script src="{{ asset('assets/js/scripts.js') }}"></script>
