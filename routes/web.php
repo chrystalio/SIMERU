@@ -83,6 +83,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [UserController::class, 'index'])->name('user.index');
             Route::get('/reset-password/{id}', [UserController::class, 'forceResetPassword'])->name('user.reset-password');
             Route::get('/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
+            Route::put('/{user}', [UserController::class, 'update'])->name('user.update');
             // Role routes
             Route::resource('roles', RoleController::class);
         });
