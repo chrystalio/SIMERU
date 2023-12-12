@@ -30,9 +30,18 @@
                                 <td>{{ $user->email }}</td>
                                 <td class="text-capitalize">{{ $user->role()->first()->name }}</td>
                                 <td>
-                                    <a href="{{ route('user.reset-password', ['id' => $user->id]) }}" class="btn btn-danger">
-                                        <i class="fa fa-key"></i>
-                                    </a>
+                                    <div class="p-1">
+                                        <a href="{{ route('user.reset-password', ['id' => $user->id]) }}" class="btn btn-danger">
+                                            <i class="fa fa-key"></i>
+                                            Reset Password
+                                        </a>
+                                    </div>
+                                    <div class="p-1">
+                                        <a href="{{ route('user.edit', ['user' => $user->id]) }}" class="btn btn-warning">
+                                            <i class="fa fa-pencil"></i>
+                                            Edit
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
