@@ -26,6 +26,16 @@ class UserController extends Controller
         ]);
     }
 
+    public function update(User $user): RedirectResponse
+    {
+        $data = request()?->validate([
+            'role_id' => 'required',
+        ]);
+
+        $user->update($data);
+
+        return redirect()->route('user.index')->with('success', 'User updated successfully');
+    }
 
     public function forceResetPassword($id): RedirectResponse
     {
