@@ -10,7 +10,7 @@
         <div class="section-body">
             <div class="card">
                 <div class="card-body ">
-                    <h5>Selamat Datang Di SIMERU BEST SOLUTION</h5>
+                    <h5>Selamat Datang Di SIMERU TECHVOLVE</h5>
                 </div>
             </div>
 
