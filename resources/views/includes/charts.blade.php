@@ -46,6 +46,9 @@
                 shared: true,
                 useHTML: true
             },
+            credits: {
+                enabled: false
+            },
             plotOptions: {
                 column: {
                     pointPadding: 0.2,
@@ -96,6 +99,9 @@
                     showInLegend: true
                 }
             },
+            credits: {
+                enabled: false
+            },
             series: [{
                 name: 'Total',
                 colorByPoint: true,
@@ -135,6 +141,9 @@
                         format: '<b>{point.name}</b>: {point.percentage:.1f} %'
                     }
                 }
+            },
+            credits: {
+                enabled: false
             },
             series: [{
                 name: 'Progress',
