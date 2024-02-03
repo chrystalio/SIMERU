@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="#">SIMERU BEST SOLUTION</a>
+            <a href="#">SIMERU Techvolve</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="#">SBS</a>
